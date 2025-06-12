@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { useTranslations } from '@/i18n/ui';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import { Home, Briefcase, FileText, Lightbulb, MessageSquare } from 'lucide-react';
@@ -18,10 +17,7 @@ export type NavItem = {
   icon: any;
 };
 
-const { pageTitle, pageDescription } = Astro.props;
 
-
-const tSite = useTranslations('en', 'site');
 
 
 const navItems: Array<NavItem> = [
@@ -133,7 +129,7 @@ const navItems: Array<NavItem> = [
         localStorage.setItem('theme', theme);
       }
     </script>
-    <title>{pageTitle || tSite('title')}</title>
+    <title>{'title'}</title>
 
     {/* Font, for example Google Fonts - to adapt according to your choices */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
