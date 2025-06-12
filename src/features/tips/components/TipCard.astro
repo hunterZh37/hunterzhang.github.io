@@ -7,19 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { type LanguageCode } from '@/i18n/ui';
 import { formatDate } from '@/lib/utils';
 
 import type { CollectionEntry } from 'astro:content';
-import { getRelativeLocaleUrl } from 'astro:i18n';
 import { Calendar, ChevronRight } from 'lucide-react';
 
 interface Props {
   tip: CollectionEntry<'tips'>;
-  lang: LanguageCode;
 }
 
-const { tip, lang } = Astro.props;
+const { tip } = Astro.props;
 ---
 
 <Card
@@ -34,7 +31,7 @@ const { tip, lang } = Astro.props;
       className="text-xl font-semibold group-hover:text-primary transition-colors pr-12"
     >
       <a
-        href={getRelativeLocaleUrl(lang, `/tips/${tip.id}/`)}
+        href={`/tips/${tip.id}/`}
         class="hover:underline"
       >
         {tip.data.title}
@@ -73,7 +70,7 @@ const { tip, lang } = Astro.props;
       class="flex items-center justify-between w-full border-t border-border/50 pt-4"
     >
       <a
-        href={getRelativeLocaleUrl(lang, `/tips/${tip.id}/`)}
+        href={`/tips/${tip.id}/`}
         class="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
       >
         {'readTip'}
