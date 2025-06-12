@@ -1,5 +1,4 @@
 ---
-import type { LanguageCode, ui } from '@/i18n/ui';
 import SectionCard from '@/components/section-card.astro';
 import { EmptyState } from '@/components/empty-state';
 import Heading from '@/components/Heading.astro';
@@ -7,21 +6,18 @@ import type { TranslatedProject } from '../type';
 
 export type Props = {
   projects: Array<TranslatedProject>;
-  t: (typeof ui)[LanguageCode];
-  lang: LanguageCode;
 };
 
-const { projects, t, lang } = Astro.props;
-const projectsPageTranslations = t.projectsPage; // For easier access
+const { projects } = Astro.props;
 ---
 
 <div class="py-12 md:py-16">
-  <Heading title={projectsPageTranslations?.title ?? 'Projects'} />
+  <Heading title={ 'Projects'} />
   {
     projects && projects.length > 0 ? (
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project: TranslatedProject) => {
-          const projectUrl = `${lang === 'fr' ? '' : '/' + lang}/projects/${project.slug}`;
+          const projectUrl = `/projects/${project.slug}`;
           return (
             <a
               href={projectUrl}
@@ -47,8 +43,8 @@ const projectsPageTranslations = t.projectsPage; // For easier access
       </div>
     ) : (
       <EmptyState
-        title={projectsPageTranslations?.noProjects}
-        description={projectsPageTranslations?.noProjectsDescription}
+        title={'noProjects'}
+        description={'noProjectsDescription'}
       />
     )
   }
