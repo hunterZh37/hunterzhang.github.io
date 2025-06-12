@@ -5,23 +5,20 @@ import {
   type PostDataForFilter,
 } from '@/features/blog/components/FilteredPostsList';
 import { BlogPostCard } from '@/features/blog';
-import type { LanguageCode } from '@/i18n/ui';
-import { useTranslations } from '@/i18n/ui';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { type CollectionEntry as AstroCollectionEntry } from 'astro:content';
 import { EmptyState } from '@/components/empty-state';
 
 type Props = {
   posts: AstroCollectionEntry<'blog'>[];
-  lang: LanguageCode;
 };
 
-const { posts, lang } = Astro.props;
+const { posts } = Astro.props;
 
 const initialSearchQuery = Astro.url.searchParams.get('q') || '';
 const initialTag = Astro.url.searchParams.get('tag') || '';
 
-const texts = useTranslations(lang, 'blogPage');
+const texts = 'blogPage';
 
 // Helper function to transform BlogEntry to PostDataForFilter
 function transformPostForClientFilter(
@@ -39,28 +36,27 @@ function transformPostForClientFilter(
   };
 }
 const componentTexts = {
-  searchPlaceholder: texts('searchPlaceholder'),
-  filterByTagButtonLabel: texts('filterByTagButtonLabel'),
-  noTagFound: texts('noTagFound'),
-  selectTagCommandPlaceholder: texts('selectTagCommandPlaceholder'),
-  allTagsLabel: texts('allTagsLabel'),
-  noPostsFound: texts('noPostsFound'),
+  searchPlaceholder: 'searchPlaceholder',
+  filterByTagButtonLabel: 'filterByTagButtonLabel',
+  noTagFound: 'noTagFound',
+  selectTagCommandPlaceholder: 'selectTagCommandPlaceholder',
+  allTagsLabel: 'allTagsLabel',
+  noPostsFound: 'noPostsFound',
 };
 
-const t = useTranslations(lang, 'blogPage');
 
-const pageTitle = t('pageTitle');
-const pageDescription = t('pageDescription');
+
+const pageTitle = 'pageTitle';
+const pageDescription = 'pageDescription';
 ---
 
 <BaseLayout {pageTitle} {pageDescription}>
   <div class="container mx-auto px-4 py-8 md:py-12">
-    <Heading title={t('title')} description={t('description')} />
+    <Heading title={'title'} description={'description'} />
     <FilteredPostsList
       client:load
       allPosts={posts.map(transformPostForClientFilter)}
       texts={componentTexts}
-      lang={lang}
       initialSearchQuery={initialSearchQuery}
       initialTag={initialTag}
     />
@@ -74,12 +70,12 @@ const pageDescription = t('pageDescription');
         posts.length > 0 ? (
           posts.map((postEntry) => (
             <div class="blog-post-card-wrapper" data-post-id={postEntry.id}>
-              <BlogPostCard post={postEntry} lang={lang} />
+              <BlogPostCard post={postEntry} />
             </div>
           ))
         ) : (
           <EmptyState
-            title={texts('noPostsFound')}
+            title={'noPostsFound'}
             id="no-posts-initial-message"
             className="hidden"
           />
@@ -87,7 +83,7 @@ const pageDescription = t('pageDescription');
       }
     </div>
     <EmptyState
-      title={texts('noPostsFound')}
+      title={'noPostsFound'}
       id="no-posts-filtered-message"
       className="hidden"
     />

@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card.tsx';
-import { useTranslations, type LanguageCode } from '@/i18n/ui';
 import { cn } from '@/lib/utils';
 
 type TocItem = {
@@ -18,14 +17,12 @@ type TocItem = {
 
 export type Props = {
   tocItems: Array<TocItem>;
-  lang: LanguageCode;
   className?: string;
 };
 
-const { tocItems, lang, className } = Astro.props;
+const { tocItems, className } = Astro.props;
 
-const t = useTranslations(lang, 'toc');
-const componentTitle = t('title');
+const componentTitle = 'title';
 ---
 
 <Card className={cn('my-8', className)}>
