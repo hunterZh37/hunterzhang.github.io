@@ -1,47 +1,41 @@
 ---
-import { ContactScreen } from '@/features/contact';
-import { useTranslations, type LanguageCode } from '@/i18n/ui';
+import { ContactScreen } from '@/features/contact'; 
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
-const lang = (Astro.currentLocale as LanguageCode | undefined) ?? 'en';
-const t = useTranslations(lang, 'contactPage');
-
 const pageMeta = {
-  title: t('pageTitle'),
-  description: t('pageDescription'),
+  title: 'pageTitle',
+  description: 'pageDescription',
 };
 
 const formTranslations = {
-  firstNameLabel: t('firstNameLabel'),
-  lastNameLabel: t('lastNameLabel'),
-  emailLabel: t('emailLabel'),
-  messageLabel: t('messageLabel'),
-  firstNamePlaceholder: t('firstNamePlaceholder'),
-  lastNamePlaceholder: t('lastNamePlaceholder'),
-  emailPlaceholder: t('emailPlaceholder'),
-  messagePlaceholder: t('messagePlaceholder'),
-  sendButtonLabel: t('sendButtonLabel'),
-  toastSuccessMessageSent: t('toastSuccessMessageSent'),
-  toastErrorFailedToSend: t('toastErrorFailedToSend'),
-  toastErrorUnexpected: t('toastErrorUnexpected'),
-  toastErrorDetails: t('toastErrorDetails'),
-  toastErrorValidationFailed: t('toastErrorValidationFailed'),
+  firstNameLabel: 'firstNameLabel',
+  lastNameLabel: 'lastNameLabel',
+  emailLabel: 'emailLabel',
+  messageLabel: 'messageLabel',
+  firstNamePlaceholder: 'firstNamePlaceholder',
+  lastNamePlaceholder: 'lastNamePlaceholder',
+  emailPlaceholder: 'emailPlaceholder',
+  messagePlaceholder: 'messagePlaceholder',
+  sendButtonLabel: 'sendButtonLabel',
+  toastSuccessMessageSent: 'toastSuccessMessageSent',
+  toastErrorFailedToSend: 'toastErrorFailedToSend',
+  toastErrorUnexpected: 'toastErrorUnexpected',
+  toastErrorDetails: 'toastErrorDetails',
+  toastErrorValidationFailed: 'toastErrorValidationFailed',
 };
 
 const layoutProps = {
-  lang,
   mainHeadingTitle: pageMeta.title,
-  mainHeadingDescription: t('description'),
-  formTitle: t('formTitle'),
+  mainHeadingDescription: 'description',
   formTranslations,
-  orSeparatorText: t('orSeparatorText'),
-  calendarTitle: t('calendarTitle'),
-  calendarDescription: t('calendarDescription'),
-  calendarLinkLabel: t('calendarLinkLabel'),
+  orSeparatorText: 'orSeparatorText',
+  calendarTitle: 'calendarTitle',
+  calendarDescription: 'calendarDescription',
+  calendarLinkLabel: 'calendarLinkLabel',
   calendarUrl: import.meta.env.PUBLIC_GOOGLE_CALENDAR_URL,
 };
 ---
 
 <BaseLayout pageTitle={pageMeta.title} pageDescription={pageMeta.description}>
-  <ContactScreen {...layoutProps} />
+  <ContactScreen formTitle="formTitle" {...layoutProps} />
 </BaseLayout>
