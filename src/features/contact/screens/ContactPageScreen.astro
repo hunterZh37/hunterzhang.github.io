@@ -1,7 +1,6 @@
 ---
 import Heading from '@/components/Heading.astro';
 import { buttonVariants } from '@/components/ui/button';
-import type { LanguageCode } from '@/i18n/ui';
 import { cn } from '@/lib/utils';
 import { Calendar } from 'lucide-react';
 
@@ -9,7 +8,6 @@ import { ContactForm } from '../components/ContactForm.tsx';
 import type { ContactFormTranslations } from '../type';
 
 interface Props {
-  lang: LanguageCode;
   mainHeadingTitle: string;
   mainHeadingDescription: string;
   formTitle: string;
@@ -22,7 +20,6 @@ interface Props {
 }
 
 const {
-  lang,
   mainHeadingTitle,
   mainHeadingDescription,
   formTitle,
@@ -48,7 +45,7 @@ const {
     <div class="w-full max-w-xl space-y-6 bg-card p-6 md:p-8 rounded-lg shadow">
       {/* Section Formulaire */}
       <Heading title={formTitle} className="text-center" />
-      <ContactForm client:load {lang} {formTranslations} />
+      <ContactForm client:load {formTranslations} />
 
       {/* Séparateur OU */}
       <div class="my-8 flex items-center">

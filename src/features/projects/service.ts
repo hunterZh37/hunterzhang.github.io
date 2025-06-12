@@ -1,6 +1,6 @@
 // Import i18n utilities
-import { ui, defaultLanguage, type LanguageCode } from '@/i18n/ui';
 import placeholderImage from '@/assets/placeholder.webp';
+import { ui } from '@/i18n/ui';
 import type {
   ProjectData,
   SkillData,
@@ -49,15 +49,14 @@ export const projectsList = [...projectsListUnsorted].sort((a, b) => {
 // Helper function to translate a single project
 function translateProject(
   project: ProjectData,
-  lang: LanguageCode
 ): TranslatedProject {
   type ProjectIdKey =
-    keyof (typeof ui)[typeof defaultLanguage]['projectsContent'];
+    keyof (typeof ui)['en']['projectsContent'];
   const currentProjectId = project.id as ProjectIdKey;
 
-  const projectContentSource = ui[lang]?.projectsContent?.[currentProjectId]
-    ? ui[lang].projectsContent
-    : ui[defaultLanguage].projectsContent;
+  const projectContentSource = ui['en']?.projectsContent?.[currentProjectId]
+    ? ui['en'].projectsContent
+    : ui['en'].projectsContent;
 
   const i18nData = projectContentSource[currentProjectId];
 
@@ -65,7 +64,7 @@ function translateProject(
     // Fallback if translation for the project ID is missing
     // This might happen if i18n/ui.ts is not updated after adding a new project
     console.warn(
-      `Translation missing for project ID: ${project.id} in language: ${lang}. Using default values.`
+      `Translation missing for project ID: ${project.id} in language: en. Using default values.`
     );
     return {
       ...project,
@@ -144,10 +143,8 @@ function translateProject(
 
 // Function to get projects with translated content
 export function getTranslatedProjects(
-  lang: LanguageCode | undefined
 ): Array<TranslatedProject> {
-  const currentLang = lang || defaultLanguage;
-  return projectsList.map((project) => translateProject(project, currentLang));
+  return projectsList.map((project) => translateProject(project));
 }
 
 // Function to get a single project by its slug (untranslated)
@@ -158,14 +155,12 @@ export function getProjectBySlug(slug: string): ProjectData | undefined {
 // Function to get a single translated project by its slug
 export function getTranslatedProjectBySlug(
   slug: string,
-  lang: LanguageCode | undefined
 ): TranslatedProject | undefined {
   const project = getProjectBySlug(slug);
   if (!project) {
     return undefined;
   }
-  const currentLang = lang || defaultLanguage;
-  return translateProject(project, currentLang);
+  return translateProject(project);
 }
 
 // Skills
@@ -208,25 +203,22 @@ export const skillsList: Array<SkillData> = [
 
 // Function to get skills with translated content
 export function getTranslatedSkills(
-  lang: LanguageCode | undefined
 ): Array<TranslatedSkill> {
-  const currentLang = lang ?? defaultLanguage;
-
   return skillsList.map((skill) => {
     type SkillIdKey =
-      keyof (typeof ui)[typeof defaultLanguage]['skillsContent'];
+      keyof (typeof ui)['en']['skillsContent'];
     const currentSkillId = skill.id as SkillIdKey;
 
-    const skillContentSource = ui[currentLang]?.skillsContent?.[currentSkillId]
-      ? ui[currentLang].skillsContent
-      : ui[defaultLanguage].skillsContent;
+    const skillContentSource = ui['en']?.skillsContent?.[currentSkillId]
+      ? ui['en'].skillsContent
+      : ui['en'].skillsContent;
 
     const skillTranslations = skillContentSource[currentSkillId];
 
     if (!skillTranslations) {
       // Fallback if translation for the skill ID is missing
       console.warn(
-        `Translation missing for skill ID: ${skill.id} in language: ${lang}. Using default values.`
+        `Translation missing for skill ID: ${skill.id} in language: en. Using default values.`
       );
       return {
         ...skill,
