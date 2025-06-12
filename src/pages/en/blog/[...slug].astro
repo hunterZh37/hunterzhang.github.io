@@ -1,13 +1,10 @@
 ---
 import { BlogPostDetailScreen } from '@/features/blog';
-import { type LanguageCode } from '@/i18n/ui';
 import { getCollection, getEntries, render } from 'astro:content';
-
-let lang = 'en' as LanguageCode;
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog', ({ data }) => {
-    return data.isDraft !== true && data.lang === 'en';
+    return data.isDraft !== true;
   });
   return blogEntries.map((post) => ({
     params: { slug: post.id },
@@ -46,8 +43,7 @@ const { Content, remarkPluginFrontmatter } = await render(post);
   post={{
     ...post.data,
     readingTimeMinutes: remarkPluginFrontmatter.readingTimeMinutes,
-  }}
-  lang={lang}
+  } as any}
   relatedPosts={finalRelatedPosts}
   filePath={post.filePath ? post.filePath : ''}
 >
