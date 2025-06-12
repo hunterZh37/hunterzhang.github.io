@@ -44,7 +44,6 @@ export type PostDataForFilter = {
 export type FilteredPostsListProps = {
   allPosts: Array<PostDataForFilter>;
   texts: BlogFiltersProps['texts'] & { noPostsFound: string };
-  lang: string;
   initialSearchQuery?: string;
   initialTag?: string;
 };
@@ -55,7 +54,6 @@ export type FilteredPostsListProps = {
 export function FilteredPostsList({
   allPosts,
   texts,
-  lang,
   initialSearchQuery = '',
   initialTag = '',
 }: FilteredPostsListProps) {

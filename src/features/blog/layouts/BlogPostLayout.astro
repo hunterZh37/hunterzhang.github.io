@@ -52,7 +52,7 @@ const { pubDate, updatedDate } = post;
       post.heroImage && (
         <Image
           src={post.heroImage.url}
-          alt={t('heroImageAlt') + post.title}
+          alt={`${'heroImageAlt'} ${post.title}`}
           class="w-full h-auto rounded-lg mb-8 shadow-lg"
           width={768}
           height={432}

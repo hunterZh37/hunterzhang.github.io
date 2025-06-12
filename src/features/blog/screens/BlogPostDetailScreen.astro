@@ -41,7 +41,7 @@ const pageDescription = post.data.description;
     </a>
 
     <header class="mb-8">
-      <Heading title={post.title} titleClassName="md:text-5xl" />
+      <Heading title={post.data.title} titleClassName="md:text-5xl" />
       <div
         class="mt-3 flex items-center justify-between text-sm text-muted-foreground"
       >
@@ -62,15 +62,15 @@ const pageDescription = post.data.description;
 
         <p class="flex items-center">
           <Clock className="mr-1.5 size-4 flex-shrink-0" />
-          <span>{post.readingTimeMinutes} {'readingTimeSuffix'}</span>
+          <span>{post.data.readingTimeMinutes} {'readingTimeSuffix'}</span>
         </p>
       </div>
 
       {
-        post.heroImage && (
+        post.data.heroImage && (
           <Image
-            src={post.heroImage.url}
-            alt={post.heroImage.alt}
+            src={post.data.heroImage.url}
+            alt={post.data.heroImage.alt}
             class="w-full h-auto object-cover rounded-lg my-6 shadow-lg"
             width={768}
             height={432}
@@ -78,9 +78,9 @@ const pageDescription = post.data.description;
         )
       }
       {
-        post.tags && post.tags.length > 0 && (
+        post.data.tags && post.data.tags.length > 0 && (
           <div class="mt-4 flex flex-wrap gap-2">
-            {post.tags.map((tag: string) => (
+            {post.data.tags.map((tag: string) => (
               <span class="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full transition-colors hover:bg-primary hover:text-primary-foreground">
                 {tag}
               </span>
