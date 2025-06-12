@@ -20,24 +20,22 @@ import {
   type ContactFormApiResponse,
 } from '../type';
 import { setGlobalZodErrorMap } from '@/i18n/zodErrorMap';
-import type { LanguageCode } from '@/i18n/ui';
 import { Loader2, Send } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface ContactFormProps {
-  lang: LanguageCode;
+
   formTranslations: ContactFormTranslations;
   onSubmitSuccess?: () => void; // Optional callback for successful submission
 }
 
 export function ContactForm({
-  lang,
   formTranslations,
   onSubmitSuccess,
 }: ContactFormProps) {
   useEffect(() => {
-    setGlobalZodErrorMap(lang);
-  }, [lang]);
+    setGlobalZodErrorMap('en');
+  }, []);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -57,7 +55,7 @@ export function ContactForm({
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...values, lang }),
+        body: JSON.stringify({ ...values }),
       });
 
       const result: ContactFormApiResponse = await response.json();
