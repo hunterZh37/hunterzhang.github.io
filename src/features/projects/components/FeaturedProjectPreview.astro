@@ -1,13 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import { buttonVariants } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import type { LanguageCode } from '@/i18n/ui';
 
 export type Props = {
-  lang: LanguageCode;
   slug: string;
   title: string;
   imageUrl?: ImageMetadata;
@@ -15,8 +11,8 @@ export type Props = {
   ctaText: string;
 };
 
-const { lang, slug, title, imageUrl, imageAltText, ctaText } = Astro.props;
-const projectUrl = getRelativeLocaleUrl(lang, `/projects/${slug}`);
+const { slug, title, imageUrl, imageAltText, ctaText } = Astro.props;
+const projectUrl = `/projects/${slug}`;
 ---
 
 <a
