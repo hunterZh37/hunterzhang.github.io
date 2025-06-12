@@ -1,5 +1,4 @@
 import { defaultLanguage, languages, type LanguageCode } from '@/i18n/ui';
-import { getRelativeLocaleUrl } from 'astro:i18n';
 
 export type LanguageSelectorItem = {
   code: string;
@@ -29,7 +28,7 @@ export function prepareLanguagesForSelector(
       code: langCode,
       name: languages[langCode].name,
       flag: languages[langCode].flag,
-      targetUrl: getRelativeLocaleUrl(langCode, basePathForLinks),
+      targetUrl: basePathForLinks,
     };
   });
 }

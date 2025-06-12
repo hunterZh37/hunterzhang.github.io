@@ -1,20 +1,14 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { defaultLanguage, useTranslations, type LanguageCode } from '@/i18n/ui';
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { Image } from 'astro:assets';
-import errorIllustration from '@/assets/error.png';
-import errorIllustrationDark from '@/assets/error-dark.png';
 import { buttonVariants } from '@/components/ui/button';
 import Heading from '@/components/Heading.astro';
+import errorIllustration from '@/assets/error.png';
+import errorIllustrationDark from '@/assets/error-dark.png';
+import { Image } from 'astro:assets';
 import { ArrowLeft } from 'lucide-react';
 
-const lang =
-  (Astro.currentLocale as LanguageCode | undefined) ?? defaultLanguage;
-const t = useTranslations(lang, 'notFoundPage');
-
-const pageTitle = t('pageTitle');
-const pageDescription = t('message');
+const pageTitle = 'pageTitle';
+const pageDescription = 'message';
 ---
 
 <BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
@@ -35,17 +29,17 @@ const pageDescription = t('message');
         quality="mid"
       />
       <Heading
-        title={t('title')}
-        description={t('message')}
+        title={'title'}
+        description={'message'}
         titleClassName="md:text-5xl"
       />
 
       <a
-        href={getRelativeLocaleUrl(lang, '/')}
+        href={'/'}
         class={buttonVariants({ variant: 'default' })}
       >
         <ArrowLeft className="mr-2 size-4" />
-        {t('homeLink')}</a
+        {'homeLink'}</a
       >
     </div>
   </section>

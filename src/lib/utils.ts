@@ -1,4 +1,4 @@
-import type { LanguageCode } from '@/i18n/ui';
+
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
