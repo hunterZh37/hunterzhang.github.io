@@ -1,10 +1,6 @@
 ---
 import { AllBlogPostsScreen } from '@/features/blog';
-import { defaultLanguage, useTranslations, type LanguageCode } from '@/i18n/ui';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-
-const lang = (Astro.currentLocale ?? defaultLanguage) as LanguageCode;
-const t = useTranslations(lang, 'blogPage');
 
 const blogEntries: Array<CollectionEntry<'blog'>> = await getCollection(
   'blog',
@@ -34,4 +30,4 @@ enrichedPosts.sort(
 );
 ---
 
-<AllBlogPostsScreen posts={enrichedPosts} lang={lang} />
+<AllBlogPostsScreen posts={enrichedPosts} />
