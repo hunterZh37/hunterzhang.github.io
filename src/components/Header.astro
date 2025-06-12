@@ -1,8 +1,5 @@
 ---
-import { defaultLanguage, type LanguageCode } from '@/i18n/ui';
 import type { NavItem } from '@/layouts/BaseLayout.astro';
-
-import { getRelativeLocaleUrl } from 'astro:i18n';
 import Logo from './Logo.astro';
 
 interface Props {
@@ -10,8 +7,6 @@ interface Props {
 }
 const { navItems } = Astro.props as Props;
 
-const currentLocale =
-  (Astro.currentLocale as LanguageCode | undefined) ?? defaultLanguage;
 ---
 
 <header
@@ -23,7 +18,7 @@ const currentLocale =
       {
         navItems.map((link) => (
           <a
-            href={getRelativeLocaleUrl(currentLocale, link.href)}
+            href={link.href}
             class="font-medium text-muted-foreground transition-colors hover:text-foreground relative group"
           >
             {link.label}
