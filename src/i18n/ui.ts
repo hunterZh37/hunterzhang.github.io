@@ -3,7 +3,7 @@ export const languages: Record<'fr' | 'en', { name: string; flag: string }> = {
   en: { name: 'English', flag: 'us' },
 } as const;
 
-export const defaultLanguage = 'fr';
+export const defaultLanguage = 'en';
 
 export type LanguageCode = keyof typeof languages;
 

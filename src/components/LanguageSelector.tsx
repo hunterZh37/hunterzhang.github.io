@@ -48,7 +48,7 @@ export function LanguageSelector({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      {/* <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
           size="icon"
@@ -91,7 +91,7 @@ export function LanguageSelector({
             {lang.name}
           </DropdownMenuCheckboxItem>
         ))}
-      </DropdownMenuContent>
+      </DropdownMenuContent> */}
     </DropdownMenu>
   );
 }

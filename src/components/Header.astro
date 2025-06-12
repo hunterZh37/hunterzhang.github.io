@@ -8,10 +8,10 @@ import Logo from './Logo.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
-  languagesForSelector: Array<LanguageSelectorItem>;
+  // languagesForSelector: Array<LanguageSelectorItem>;
   navItems: Array<NavItem>;
 }
-const { languagesForSelector, navItems } = Astro.props as Props;
+const { navItems } = Astro.props as Props;
 
 const currentLocale =
   (Astro.currentLocale as LanguageCode | undefined) ?? defaultLanguage;
@@ -36,12 +36,12 @@ const currentLocale =
       }
     </div>
     <div class="flex items-center gap-x-3">
-      <LanguageSelector
+      <!-- <LanguageSelector
         currentLocale={currentLocale}
         languages={languagesForSelector}
         client:load
-      />
-      <ThemeToggle />
+      /> -->
+      <!-- <ThemeToggle /> -->
     </div>
   </nav>
 </header>
