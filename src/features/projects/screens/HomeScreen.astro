@@ -4,9 +4,8 @@ import SkillCard from '@/components/SkillCard.astro';
 import { buttonVariants } from '@/components/ui/button';
 import { Calendar, Dumbbell } from 'lucide-react';
 
-import heroImage from '@/assets/user-hero.webp';
+import heroImage from '@/assets/HunterZhang.jpeg';
 import { Image } from 'astro:assets';
-import FeaturedProjectPreview from '../components/FeaturedProjectPreview.astro';
 import type { TranslatedProject, TranslatedSkill } from '../type';
 
 export type Props = {
@@ -49,16 +48,22 @@ const {
       <h1
         class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
       >
-        {heroGreeting}
+        <!-- {heroGreeting} -->
+        Hi, I am Hunter Zhang
       </h1>
-      <p class="text-2xl md:text-3xl font-medium text-muted-foreground mb-2">
-        <span>{heroSubtitlePart1}</span>
+      <p class="text-2xl md:text-2xl font-medium text-muted-foreground mb-10">
+        <!-- <span>{heroSubtitlePart1}</span>
         <span class="text-primary"> | </span>
-        <span>{heroSubtitlePart2}</span>
+        <span>{heroSubtitlePart2}</span> -->
+        <span>Full-Stack ML Product Engineer</span>
+        <span class="text-primary"> | </span>
+        <span>Designer</span>
+        <span class="text-primary"> | </span>
+        <span>Manager</span>
       </p>
-      <p class="text-lg text-muted-foreground mb-8">
+      <!-- <p class="text-lg text-muted-foreground mb-8">
         {heroIntroduction}
-      </p>
+      </p> -->
       <div
         class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
       >
@@ -67,14 +72,16 @@ const {
           class={buttonVariants({ variant: 'default', size: 'lg' })}
         >
           <Dumbbell className="mr-2 size-4" />
-          {heroViewWorkButton}
+          <!-- {heroViewWorkButton} -->
+          View My Work
         </a>
         <a
           href={'/contact'}
           class={buttonVariants({ variant: 'outline', size: 'lg' })}
         >
           <Calendar className="mr-2 size-4" />
-          {heroContactButton}
+          <!-- {heroContactButton} -->
+          Get in Touch
         </a>
       </div>
     </div>
@@ -99,7 +106,75 @@ const {
   </div>
 </section>
 
-{/* Featured Projects Section */}
+{/* Achievements Section */}
+<section class="py-12 md:py-16 bg-muted/20 dark:bg-muted/10">
+  <div class="container mx-auto px-4">
+    <Heading
+      title="Key Achievements"
+      description="Milestones that define my journey"
+      className="flex flex-col items-center"
+    />
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="bg-background rounded-lg p-6 shadow-sm border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+                     <div>
+             <h3 class="font-semibold text-lg mb-2">ACM Best Paper Award</h3>
+             <p class="text-muted-foreground">Youngest-ever recipient of ACM's most prestigious research recognition, competing against global research leaders</p>
+           </div>
+        </div>
+      </div>
+
+      <div class="bg-background rounded-lg p-6 shadow-sm border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+            </svg>
+          </div>
+                     <div>
+             <h3 class="font-semibold text-lg mb-2">$375K Seed Funding Secured</h3>
+             <p class="text-muted-foreground">Architected winning product strategy that convinced top-tier investors to back our vision in competitive market</p>
+           </div>
+        </div>
+      </div>
+
+      <div class="bg-background rounded-lg p-6 shadow-sm border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+                     <div>
+             <h3 class="font-semibold text-lg mb-2">Ecosystem Pioneer</h3>
+             <p class="text-muted-foreground">Built Stanford's largest graduate entrepreneurship community from zero, revolutionizing campus culture and launching cutting-edge XR innovation hub</p>
+           </div>
+        </div>
+      </div>
+
+      <div class="bg-background rounded-lg p-6 shadow-sm border">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+          </div>
+                     <div>
+             <h3 class="font-semibold text-lg mb-2">Thought Leadership</h3>
+             <p class="text-muted-foreground">Stanford Daily spotlight featuring groundbreaking innovations that shaped university's entrepreneurial landscape</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- {/* Featured Projects Section */}
 <section id="projects" class="py-12 md:py-16 bg-muted/20 dark:bg-muted/10">
   <Heading
     title={featuredProjectsTitle}
@@ -122,7 +197,7 @@ const {
       })
     }
   </div>
-</section>
+</section> -->
 
 {/* Skills Section */}
 <section id="skills" class="py-12 md:py-16">
