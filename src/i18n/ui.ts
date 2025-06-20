@@ -41,9 +41,9 @@ export const ui = {
     },
     skillsContent: {
       frontendDevelopment: {
-        title: 'Frontend Development!!',
+        title: 'Frontend Development',
         description:
-          'Building interactive and high-performance user interfaces.',
+          'I specialize in building sleek, high-performance interfaces with clean architecture that elevate the user experience across devices.',
       },
       backendDevelopment: {
         title: 'Backend Development',

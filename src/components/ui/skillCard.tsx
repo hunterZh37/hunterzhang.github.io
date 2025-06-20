@@ -42,6 +42,11 @@ import {
   SiKubernetes,
   SiGit,
   SiAmazon,
+  SiNextdotjs,
+  SiSupabase,
+  SiRedis,
+  SiFlask,
+  SiFastapi,
 } from 'react-icons/si';
 
 import type { Technology } from '@/features/projects/type';
@@ -65,6 +70,7 @@ const iconComponents: Record<string, LucideIcon> = {
 
 // Mapping for tech-specific react-icons
 const techIconComponents: Record<string, React.ComponentType> = {
+  nextjs: SiNextdotjs,
   react: SiReact,
   angular: SiAngular,
   typescript: SiTypescript,
@@ -91,6 +97,10 @@ const techIconComponents: Record<string, React.ComponentType> = {
   kubernetes: SiKubernetes,
   git: SiGit,
   amazonservices: SiAmazon,
+  supabase: SiSupabase,
+  redis: SiRedis,
+  flask: SiFlask,
+  fastapi: SiFastapi,
 };
 
 const SkillCard: FC<Props> = ({ title, description, iconName, technologies = [] }) => {

@@ -170,10 +170,12 @@ export const skillsList: Array<SkillData> = [
     id: 'frontendDevelopment',
     iconName: 'MonitorSmartphone',
     technologies: [
-      { id: 'html', name: 'HTML' },
-      { id: 'css', name: 'CSS' },
       { id: 'javascript', name: 'JavaScript' },
       { id: 'typescript', name: 'TypeScript' },
+      { id: 'react', name: 'React' },
+      { id: 'nextjs', name: 'Next.js' },
+      { id: 'astro', name: 'Astro' },
+      { id: 'tailwindcss', name: 'TailwindCSS' },
     ],
   },
   {
@@ -183,6 +185,12 @@ export const skillsList: Array<SkillData> = [
     technologies: [
       { id: 'nodejs', name: 'Node.js' },
       { id: 'restapi', name: 'REST APIs' },
+      { id: 'postgresql', name: 'PostgreSQL' },
+      { id: 'supabase', name: 'Supabase' },
+      { id: 'redis', name: 'Redis' },
+      { id: 'python', name: 'Python' },
+      { id: 'flask', name: 'Flask' },
+      { id: 'fastapi', name: 'FastAPI' },
     ],
   },
   {
