@@ -48,6 +48,7 @@ const tipsCollection = defineCollection({
       featured: z.boolean().optional(),
       difficulty: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
     }),
+
 });
 
 export const collections = {
