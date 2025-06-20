@@ -209,6 +209,8 @@ export const skillsList: Array<SkillData> = [
     technologies: [
       { id: 'git', name: 'Git' },
       { id: 'docker', name: 'Docker' },
+      { id: 'amazonservices', name: 'AWS' },
+      { id: 'postman', name: 'Postman' },
     ],
   },
 ];

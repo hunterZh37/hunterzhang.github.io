@@ -55,7 +55,7 @@ export const ui = {
       },
       devOps: {
         title: 'DevOps',
-        description: 'Automating development and deployment processes.',
+        description: "Implementing CI/CD pipelines and infrastructure automation to ensure fast, reliable, and repeatable software delivery.",
       },
     },
     site: {

@@ -41,12 +41,13 @@ import {
   SiDocker,
   SiKubernetes,
   SiGit,
-  SiAmazon,
   SiNextdotjs,
   SiSupabase,
   SiRedis,
   SiFlask,
   SiFastapi,
+  SiPostman,
+  SiAmazon,
 } from 'react-icons/si';
 
 import type { Technology } from '@/features/projects/type';
@@ -101,6 +102,9 @@ const techIconComponents: Record<string, React.ComponentType> = {
   redis: SiRedis,
   flask: SiFlask,
   fastapi: SiFastapi,
+  postman: SiPostman,
+
+
 };
 
 const SkillCard: FC<Props> = ({ title, description, iconName, technologies = [] }) => {
