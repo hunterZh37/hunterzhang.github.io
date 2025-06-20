@@ -43,11 +43,11 @@ export const ui = {
       frontendDevelopment: {
         title: 'Frontend Development',
         description:
-          'I specialize in building sleek, high-performance interfaces with clean architecture that elevate the user experience across devices.',
+          'Specializing in building sleek, high-performance interfaces with clean architecture that elevate the user experience across devices.',
       },
       backendDevelopment: {
         title: 'Backend Development',
-        description: 'Constructing robust server logic and APIs.',
+        description: 'Specializing in engineering database backend systems and APIs that ensure scalability,performance, and smooth client integration.',
       },
       uiUxDesign: {
         title: 'UI/UX Design',
