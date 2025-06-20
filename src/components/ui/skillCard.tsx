@@ -12,6 +12,7 @@ import {
   Database,
   PenTool,
   Network,
+  Brain,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -48,6 +49,8 @@ import {
   SiFastapi,
   SiPostman,
   SiAmazon,
+  SiPytorch,
+  SiTensorflow,
 } from 'react-icons/si';
 
 import type { Technology } from '@/features/projects/type';
@@ -67,6 +70,7 @@ const iconComponents: Record<string, LucideIcon> = {
   Database,
   PenTool,
   Network,
+  Brain,
 };
 
 // Mapping for tech-specific react-icons
@@ -103,8 +107,8 @@ const techIconComponents: Record<string, React.ComponentType> = {
   flask: SiFlask,
   fastapi: SiFastapi,
   postman: SiPostman,
-
-
+  pytorch: SiPytorch,
+  tensorflow: SiTensorflow,
 };
 
 const SkillCard: FC<Props> = ({ title, description, iconName, technologies = [] }) => {

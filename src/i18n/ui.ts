@@ -57,6 +57,10 @@ export const ui = {
         title: 'DevOps',
         description: "Implementing CI/CD pipelines and infrastructure automation to ensure fast, reliable, and repeatable software delivery.",
       },
+      machineLearning: {
+        title: 'Machine Learning',
+        description: 'Designing, training, and deploying machine learning models that solve real-world problems.',
+      },
     },
     site: {
       title: 'My Awesome Template',

@@ -194,6 +194,16 @@ export const skillsList: Array<SkillData> = [
     ],
   },
   {
+    category: 'engineering',
+    id: 'machineLearning',
+    iconName: 'Brain',
+    technologies: [
+      { id: 'python', name: 'Python' },
+      { id: 'tensorflow', name: 'TensorFlow' },
+      { id: 'pytorch', name: 'PyTorch' },
+    ],
+  },
+  {
     category: 'design',
     id: 'uiUxDesign',
     iconName: 'PenTool',
