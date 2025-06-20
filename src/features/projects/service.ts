@@ -209,7 +209,7 @@ export const skillsList: Array<SkillData> = [
     iconName: 'PenTool',
     technologies: [
       { id: 'figma', name: 'Figma' },
-      { id: 'responsiveDesign', name: 'Responsive Design' },
+      { id: 'canvas', name: 'Canvas' },
     ],
   },
   {
@@ -221,6 +221,14 @@ export const skillsList: Array<SkillData> = [
       { id: 'docker', name: 'Docker' },
       { id: 'amazonservices', name: 'AWS' },
       { id: 'postman', name: 'Postman' },
+    ],
+  },
+  {
+    category: 'engineering',
+    id: 'xrDevelopment',
+    iconName: 'ScanEye',
+    technologies: [
+      { id: 'unity', name: 'Unity' },
     ],
   },
 ];

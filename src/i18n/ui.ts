@@ -43,11 +43,11 @@ export const ui = {
       frontendDevelopment: {
         title: 'Frontend Development',
         description:
-          'Specializing in building sleek, high-performance interfaces with clean architecture that elevate the user experience across devices.',
+          'Building sleek, high-performance interfaces with clean architecture that elevate the user experience across devices.',
       },
       backendDevelopment: {
         title: 'Backend Development',
-        description: 'Specializing in engineering database backend systems and APIs that ensure scalability,performance, and smooth client integration.',
+        description: 'Engineering database backend systems and APIs that ensure scalability,performance, and smooth client integration.',
       },
       uiUxDesign: {
         title: 'UI/UX Design',
@@ -60,6 +60,10 @@ export const ui = {
       machineLearning: {
         title: 'Machine Learning',
         description: 'Designing, training, and deploying machine learning models that solve real-world problems.',
+      },
+      xrDevelopment: {
+        title: 'XR Development',
+        description: 'Creating immersive and interactive experiences using Unity and C#.',
       },
     },
     site: {
