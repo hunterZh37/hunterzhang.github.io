@@ -22,9 +22,10 @@ export type NavItem = {
 
 const navItems: Array<NavItem> = [
   { href: '/', label: 'home', icon: Home },
-  { href: '/projects', label: 'projects', icon: Briefcase },
-  { href: '/blog', label: 'blog', icon: FileText },
-  { href: '/tips', label: 'tips', icon: Lightbulb },
+  { href: '/projects', label: 'industry', icon: Briefcase },
+  { href: '/skills', label: 'research', icon: Briefcase },
+  { href: '/blog', label: 'blogs', icon: FileText },
+  { href: '/tips', label: 'interests', icon: Lightbulb },
   { href: '/contact', label: 'contact', icon: MessageSquare },
 ];
 
@@ -105,28 +106,11 @@ const navItems: Array<NavItem> = [
 
     <script is:inline>
       const getInitialTheme = () => {
-        if (
-          typeof localStorage !== 'undefined' &&
-          localStorage.getItem('theme')
-        ) {
-          return localStorage.getItem('theme');
-        }
-        if (
-          window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches
-        ) {
-          return 'dark';
-        }
-        return 'light';
+        return 'dark';
       };
       const theme = getInitialTheme();
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
-      }
-      // Ensure localStorage is consistent if theme was derived from prefers-color-scheme
-      // or if localStorage was empty.
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('theme', theme);
       }
     </script>
     <title>{'title'}</title>
@@ -166,34 +150,31 @@ const navItems: Array<NavItem> = [
       document.addEventListener('DOMContentLoaded', () => {
         const initializeAndRunMermaid = () => {
           if (typeof mermaid !== 'undefined') {
-            const isDarkMode =
-              document.documentElement.classList.contains('dark');
-            const mermaidTheme = isDarkMode ? 'dark' : 'default';
 
             let themeVars = {
               fontFamily: '"Inter", sans-serif',
               fontSize: '15px',
               // Base variables (light mode defaults)
-              primaryColor: isDarkMode ? '#3B0764' : '#F3EFFF', // Node background
-              primaryTextColor: isDarkMode ? '#F3F4F6' : '#1f2937', // Node text
-              primaryBorderColor: isDarkMode ? '#A78BFA' : '#9333ea', // Node border
-              lineColor: isDarkMode ? '#A78BFA' : '#7E22CE', // Edge lines
-              textColor: isDarkMode ? '#E5E7EB' : '#374151', // General text (like edge labels)
-              edgeLabelBackground: isDarkMode ? '#4B3264' : '#E9D5FF', // Background for edge labels
+              primaryColor: '#3B0764', // Node background
+              primaryTextColor: '#F3F4F6', // Node text
+              primaryBorderColor: '#A78BFA', // Node border
+              lineColor: '#A78BFA', // Edge lines
+              textColor: '#E5E7EB', // General text (like edge labels)
+              edgeLabelBackground: '#4B3264', // Background for edge labels
               // Specific for sequence diagrams, etc. (can be expanded)
-              actorBkg: isDarkMode ? '#3B0764' : '#F3EFFF',
-              actorBorder: isDarkMode ? '#A78BFA' : '#9333ea',
-              labelBoxBkgColor: isDarkMode ? '#2e104f' : '#f7f2ff', // Background for loop/alt/opt boxes
-              labelTextColor: isDarkMode ? '#E5E7EB' : '#374151',
-              noteBkgColor: isDarkMode ? '#2a0f4a' : '#fbf7ff',
-              noteTextColor: isDarkMode ? '#E5E7EB' : '#374151',
-              clusterBkg: isDarkMode ? '#240a3c' : '#faf5ff',
-              clusterBorder: isDarkMode ? '#7c3aed' : '#a855f7',
+              actorBkg: '#3B0764',
+              actorBorder: '#A78BFA',
+              labelBoxBkgColor: '#2e104f', // Background for loop/alt/opt boxes
+              labelTextColor: '#E5E7EB',
+              noteBkgColor: '#2a0f4a',
+              noteTextColor: '#E5E7EB',
+              clusterBkg: '#240a3c',
+              clusterBorder: '#7c3aed',
             };
 
             mermaid.initialize({
               startOnLoad: false, // We call run() manually
-              theme: mermaidTheme,
+              theme: 'dark',
               themeVariables: themeVars,
             });
 
