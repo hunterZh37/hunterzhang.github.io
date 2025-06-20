@@ -1,5 +1,5 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import SkillCard from '@/components/SkillCard.astro';
+import SkillCard from '@/components/SkillCard.astro';       
 import type { TranslatedSkill } from '@/features/projects/type';
 
 interface SkillsTabsProps {
@@ -7,15 +7,16 @@ interface SkillsTabsProps {
 }
 
 export default function SkillsTabs({ skills }: SkillsTabsProps) {
-  const frontendSkills = skills.filter(skill => skill.category === 'frontend');
-  const backendSkills = skills.filter(skill => skill.category === 'backend');
+  const engineeringSkills = skills.filter(skill => skill.category === 'engineering');
+  const designSkills = skills.filter(skill => skill.category === 'design');
+  const managementSkills = skills.filter(skill => skill.category === 'management');
 
   return (
-    <Tabs defaultValue="all" className="w-full">
+    <Tabs defaultValue="engineering" className="w-full">
       <TabsList className="grid w-full grid-cols-3 mb-8">
-        <TabsTrigger value="all">All</TabsTrigger>
-        <TabsTrigger value="frontend">Frontend</TabsTrigger>
-        <TabsTrigger value="backend">Backend</TabsTrigger>
+        <TabsTrigger value="engineering">Engineering</TabsTrigger>
+        <TabsTrigger value="design">Design</TabsTrigger>
+        <TabsTrigger value="management">Management</TabsTrigger>
       </TabsList>
       
       <TabsContent value="all">
@@ -63,9 +64,9 @@ export default function SkillsTabs({ skills }: SkillsTabsProps) {
         </div>
       </TabsContent>
       
-      <TabsContent value="frontend">
+      <TabsContent value="engineering">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {frontendSkills.map((skill) => (
+          {engineeringSkills.map((skill) => (
             <div key={skill.id} className="skill-card-wrapper">
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300 gap-3 pt-2 bg-background rounded-lg p-6 shadow-sm border">
                 <div className="pb-3 pt-4">
@@ -106,9 +107,9 @@ export default function SkillsTabs({ skills }: SkillsTabsProps) {
         </div>
       </TabsContent>
       
-      <TabsContent value="backend">
+      <TabsContent value="design">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {backendSkills.map((skill) => (
+          {designSkills.map((skill) => (
             <div key={skill.id} className="skill-card-wrapper">
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300 gap-3 pt-2 bg-background rounded-lg p-6 shadow-sm border">
                 <div className="pb-3 pt-4">
