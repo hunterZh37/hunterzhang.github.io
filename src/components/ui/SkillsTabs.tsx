@@ -1,5 +1,5 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import SkillCard from '@/components/SkillCard.astro';       
+import SkillCard from '@/components/SkillCard';       
 import type { TranslatedSkill } from '@/features/projects/type';
 
 interface SkillsTabsProps {

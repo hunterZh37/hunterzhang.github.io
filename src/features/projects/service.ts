@@ -166,6 +166,7 @@ export function getTranslatedProjectBySlug(
 // Skills
 export const skillsList: Array<SkillData> = [
   {
+    category: 'engineering',
     id: 'frontendDevelopment',
     iconName: 'MonitorSmartphone',
     technologies: [
@@ -176,6 +177,7 @@ export const skillsList: Array<SkillData> = [
     ],
   },
   {
+    category: 'engineering',
     id: 'backendDevelopment',
     iconName: 'ServerCog',
     technologies: [
@@ -184,6 +186,7 @@ export const skillsList: Array<SkillData> = [
     ],
   },
   {
+    category: 'design',
     id: 'uiUxDesign',
     iconName: 'PenTool',
     technologies: [
@@ -192,6 +195,7 @@ export const skillsList: Array<SkillData> = [
     ],
   },
   {
+    category: 'engineering',
     id: 'devOps',
     iconName: 'Network',
     technologies: [
