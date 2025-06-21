@@ -256,6 +256,33 @@ export const skillsList: Array<SkillData> = [
       { id: 'unity', name: 'Unity' },
     ],
   },
+  {
+    category: 'management',
+    id: 'productStrategy',
+    iconName: 'ChartNetwork',
+    technologies: [
+    ],
+  },
+  {
+    category: 'management',
+    id: 'needFinding',
+    iconName: 'Binoculars',
+    technologies: [
+    ],
+  },
+  {
+    category: 'management',
+    id: 'userInterview',
+    iconName: 'Users',
+    technologies: [
+    ],
+  },
+  {
+    category: 'management',
+    id: 'aiRapidPrototyping',
+    iconName: 'Zap',
+    technologies: []
+  },
 ];
 
 // Function to get skills with translated content

@@ -18,6 +18,10 @@ import {
   FileBadge2,
   Feather,
   Clapperboard,
+  Binoculars,
+  ChartNetwork,
+  Users,
+  Zap,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -86,6 +90,10 @@ const iconComponents: Record<string, LucideIcon> = {
   FileBadge2,
   Feather,
   Clapperboard,
+  Binoculars,
+  ChartNetwork,
+  Users,
+  Zap,
 };
 
 // Mapping for tech-specific react-icons

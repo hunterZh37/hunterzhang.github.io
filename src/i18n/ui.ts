@@ -78,6 +78,22 @@ export const ui = {
         title: 'XR Development',
         description: 'Creating immersive and interactive experiences using Unity and C#.',
       },
+      productStrategy: {
+        title: 'Product Strategy',
+        description: 'Developing and implementing data-backed product strategies that align with business goals and user needs.',
+      },
+      needFinding: {
+        title: 'Need Finding',
+        description: 'Identifying user needs and pain points to create business-viable products that solve real-world problems.',
+      },
+      userInterview: {
+        title: 'User Interview',
+        description: 'Conducting user interviews to understand user needs and behaviors for achieving product goals.',
+      },  
+      aiRapidPrototyping: {
+        title: 'AI-DrivenRapid Prototyping',
+        description: 'Using AI IDEs to generate product prototypes and rapidly iterate on product ideas.',
+      },
     },
     site: {
       title: 'My Awesome Template',
