@@ -5,6 +5,7 @@ import {
   CardTitle,
   CardContent,
   CardFooter,
+  
 } from '@/components/ui/card';
 import {
   MonitorSmartphone,
@@ -14,6 +15,9 @@ import {
   Network,
   Brain,
   ScanEye,
+  FileBadge2,
+  Feather,
+  Clapperboard,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -53,6 +57,10 @@ import {
   SiPytorch,
   SiTensorflow,
   SiUnity,
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiCanva,
+  SiAdobepremierepro,
 } from 'react-icons/si';
 
 import type { Technology } from '@/features/projects/type';
@@ -74,6 +82,9 @@ const iconComponents: Record<string, LucideIcon> = {
   Network,
   Brain,
   ScanEye,
+  FileBadge2,
+  Feather,
+  Clapperboard,
 };
 
 // Mapping for tech-specific react-icons
@@ -113,6 +124,10 @@ const techIconComponents: Record<string, React.ComponentType> = {
   pytorch: SiPytorch,
   tensorflow: SiTensorflow,
   unity: SiUnity,
+  illustrator: SiAdobeillustrator,
+  photoshop: SiAdobephotoshop,
+  canva: SiCanva,
+  premierepro: SiAdobepremierepro,
 };
 
 const SkillCard: FC<Props> = ({ title, description, iconName, technologies = [] }) => {

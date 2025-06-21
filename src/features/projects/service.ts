@@ -209,7 +209,32 @@ export const skillsList: Array<SkillData> = [
     iconName: 'PenTool',
     technologies: [
       { id: 'figma', name: 'Figma' },
-      { id: 'canvas', name: 'Canvas' },
+    ],
+  },
+  {
+    category: 'design',
+    id: 'posterDesign',
+    iconName: 'FileBadge2',
+    technologies: [
+      { id: 'canva', name: 'Canva' },
+    ],
+  },
+  {
+    category: 'design',
+    id: 'logoDesign',
+    iconName: 'Feather',
+    technologies: [
+      { id: 'illustrator', name: 'Illustrator' },
+      { id: 'photoshop', name: 'Photoshop' },
+    ],
+  },
+  {
+    category: 'design',
+    id: 'videoEditing',
+    iconName: 'Clapperboard',
+    technologies: [
+      { id: 'premierepro', name: 'Premiere Pro' },
+      { id: 'capcut', name: 'CapCut' },
     ],
   },
   {

@@ -40,6 +40,7 @@ export const ui = {
       },
     },
     skillsContent: {
+      
       frontendDevelopment: {
         title: 'Frontend Development',
         description:
@@ -51,7 +52,19 @@ export const ui = {
       },
       uiUxDesign: {
         title: 'UI/UX Design',
-        description: 'Designing intuitive and aesthetic user experiences.',
+        description: 'Crafting user experiences that are visually pleasing and deeply informed by functionality and user behavior.',
+      },
+      posterDesign: {
+        title: 'Poster Design',
+        description: 'Creating visually appealing and informative posters for events, promotions, and marketing campaigns.',
+      },
+      logoDesign: {
+        title: 'Logo Design',
+        description: 'Designing memorable and impactful logos that represent brands and organizations.',
+      },
+      videoEditing: {
+        title: 'Video Editing',
+        description: 'Editing and enhancing videos to create engaging and professional content.',
       },
       devOps: {
         title: 'DevOps',
