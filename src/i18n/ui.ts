@@ -11,16 +11,16 @@ export const ui = {
     projectsContent: {
       sampleProject: {
         title: 'Lively',
-        description: 'This is a sample project for the template.',
-        imageAltText: 'Placeholder image for the sample project',
+        description: 'A highly configurable toolkit for commanding robots in mixed modalities.',
+        imageAltText: 'Lively',
         categoryText: 'Web Application',
-        dateText: 'January 2025',
+        dateText: 'January 2025 - Present',
         detailedDescription:
-          'A more detailed description of this sample project, showing how to structure content for the project detail page.',
+          'Lively is a highly configurable toolkit for commanding robots in mixed modalities. It is built with Rust and Python, and is designed to be easy to use and extend.',
         keyFeatures: {
-          responsiveDesign: {
-            title: 'Responsive Design',
-            description: 'The project adapts to all screen sizes.',
+          mixedModalities: {
+            title: 'Mixed Modalities',
+            description: 'Lively supports mixed modalities, including text, voice, and vision.',
           },
           contentManagement: {
             title: 'Easy Content Management',
