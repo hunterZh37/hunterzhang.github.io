@@ -65,6 +65,7 @@ import {
 
 import type { Technology } from '@/features/projects/type';
 import type { FC } from 'react';
+import type { IconType } from 'react-icons';
 
 type Props = {
   title: string;
@@ -88,7 +89,7 @@ const iconComponents: Record<string, LucideIcon> = {
 };
 
 // Mapping for tech-specific react-icons
-const techIconComponents: Record<string, React.ComponentType> = {
+const techIconComponents: Record<string, IconType> = {
   nextjs: SiNextdotjs,
   react: SiReact,
   angular: SiAngular,
