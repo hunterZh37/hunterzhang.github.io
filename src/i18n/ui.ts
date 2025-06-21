@@ -10,7 +10,7 @@ export const ui = {
   en: {
     projectsContent: {
       sampleProject: {
-        title: 'Sample Project',
+        title: 'Lively',
         description: 'This is a sample project for the template.',
         imageAltText: 'Placeholder image for the sample project',
         categoryText: 'Web Application',
@@ -91,7 +91,7 @@ export const ui = {
         description: 'Conducting user interviews to understand user needs and behaviors for achieving product goals.',
       },  
       aiRapidPrototyping: {
-        title: 'AI-DrivenRapid Prototyping',
+        title: 'AI-Driven Rapid Prototyping',
         description: 'Using AI IDEs to generate product prototypes and rapidly iterate on product ideas.',
       },
     },

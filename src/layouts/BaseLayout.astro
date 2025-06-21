@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
-import { Home, Briefcase, FileText, Lightbulb, MessageSquare } from 'lucide-react';
+import { Home, Briefcase, FileText, Lightbulb, MessageSquare, Brain } from 'lucide-react';
 import { ClientRouter } from 'astro:transitions';
 import { Toaster } from 'sonner';
 
@@ -22,10 +22,10 @@ export type NavItem = {
 
 const navItems: Array<NavItem> = [
   { href: '/', label: 'home', icon: Home },
-  { href: '/projects', label: 'industry', icon: Briefcase },
-  { href: '/skills', label: 'research', icon: Briefcase },
+  { href: '/projects', label: 'projects', icon: Briefcase },
+  { href: '/skills', label: 'experience', icon: Brain },
   { href: '/blog', label: 'blogs', icon: FileText },
-  { href: '/tips', label: 'interests', icon: Lightbulb },
+  { href: '/tips', label: 'interests', icon: Brain },
   { href: '/contact', label: 'contact', icon: MessageSquare },
 ];
 

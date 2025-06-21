@@ -191,6 +191,7 @@ export const skillsList: Array<SkillData> = [
       { id: 'python', name: 'Python' },
       { id: 'flask', name: 'Flask' },
       { id: 'fastapi', name: 'FastAPI' },
+      { id: 'rust', name: 'Rust' },
     ],
   },
   {

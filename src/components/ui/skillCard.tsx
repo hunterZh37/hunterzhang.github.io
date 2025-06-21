@@ -65,6 +65,7 @@ import {
   SiAdobephotoshop,
   SiCanva,
   SiAdobepremierepro,
+  SiRust,
 } from 'react-icons/si';
 
 import type { Technology } from '@/features/projects/type';
@@ -137,6 +138,7 @@ const techIconComponents: Record<string, IconType> = {
   photoshop: SiAdobephotoshop,
   canva: SiCanva,
   premierepro: SiAdobepremierepro,
+  rust: SiRust,
 };
 
 const SkillCard: FC<Props> = ({ title, description, iconName, technologies = [] }) => {
