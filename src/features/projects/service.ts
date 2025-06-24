@@ -36,11 +36,23 @@ const projectsListUnsorted: Array<ProjectData> = [
     ],
     technologiesUsed: [
       // Technologies used (IDs for display)
-      { id: 'astro', name: 'Astro' },
-      { id: 'typescript', name: 'TypeScript' },
-      { id: 'tailwindcss', name: 'TailwindCSS' },
+      { id: 'rust', name: 'Rust' },
+      { id: 'javascript', name: 'JavaScript' },
+      { id: 'python', name: 'Python' },
     ],
-    description: 'Lively is a highly configurable API layer for commanding robots in mixed modalities using Rust.',
+    description: 'Robots that work with or around people need to move in ways that make sense both for their tasks and their social signals. But combining those goals can often cause conflicts. Lively, a cobot movement simulation library, enables robots to generate real-time, natural motion that is both task-driven and socially expressive.',
+    contributions: [
+      'Engineered a highly configurable library for commanding robots in mixed modalities that provides API for <strong>Rust</strong>, <strong>JavaScript</strong>, and <strong>Python</strong>.',
+      'Built an optimized collision detection system for robot spatial dynamics, boosting processing speed by <strong>215%</strong> compared to existing solutions.',
+      'Implemented an interactive <a href="https://wisc-hci.github.io/lively/docs/Tutorials/environment-sine" class="text-red-600 underline" target="_blank" rel="noopener noreferrer">tutorial</a> system for users to learn how to use the library.',
+    ],
+    links: [
+      {
+        id: 'github',
+        url: 'https://github.com/lively-cobot/lively',
+        label: 'GitHub',
+      },
+    ],
   },
 ];
 

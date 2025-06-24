@@ -40,6 +40,8 @@ export type ProjectData = {
 
   description: string; // Short description for cards/previews
   videoUrl?: string; // Video URL for the project
+  contributions?: Array<string>; // Contributions to the project
+  links?: Array<{ id: string; url: string; label: string }>; // Links to the project
 };
 
 // Define the type for a project once its content is translated
