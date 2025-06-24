@@ -7,13 +7,9 @@ interface SkillsTabsProps {
 }
 
 export default function SkillsTabs({ skills }: SkillsTabsProps) {
-  console.log('+++++!!', skills);
   const engineeringSkills = skills.filter(skill => skill.category === 'engineering');
   const designSkills = skills.filter(skill => skill.category === 'design');
   const managementSkills = skills.filter(skill => skill.category === 'management');
-console.log('engineeringSkills', engineeringSkills);
-console.log('designSkills', designSkills);
-console.log('managementSkills', managementSkills);
   return (
     <Tabs defaultValue="engineering" className="w-full">
       <TabsList className="grid w-full grid-cols-3 mb-8">

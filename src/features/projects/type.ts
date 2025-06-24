@@ -38,6 +38,7 @@ export type ProjectData = {
   // technologiesUsed can be more detailed than simple tags
   technologiesUsed?: Array<TechnologyDetail>; // More structured than tags
 
+  shortDescription: string; // Short description for cards/previews
   description: string; // Short description for cards/previews
   videoUrl?: string; // Video URL for the project
   contributions?: Array<string>; // Contributions to the project

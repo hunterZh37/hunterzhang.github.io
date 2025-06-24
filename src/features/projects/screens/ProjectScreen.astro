@@ -2,16 +2,110 @@
 import Heading from '@/components/Heading.astro';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
-import { Code, ExternalLink } from 'lucide-react';
+import { Code, ExternalLink, Link as LinkIcon } from 'lucide-react';
 import type { TranslatedProject } from '../type';
+import type { IconType } from 'react-icons';
+import { Github,  ScrollText, FileCode} from 'lucide-react';
 
-
+import {
+  SiReact,
+  SiAngular,
+  SiTypescript,
+  SiAstro,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiNodedotjs,
+  SiBun,
+  SiDeno,
+  SiExpress,
+  SiNestjs,
+  SiHono,
+  SiPython,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiSqlite,
+  SiPrisma,
+  SiDrizzle,
+  SiFigma,
+  SiDocker,
+  SiKubernetes,
+  SiGit,
+  SiNextdotjs,
+  SiSupabase,
+  SiRedis,
+  SiFlask,
+  SiFastapi,
+  SiPostman,
+  SiAmazon,
+  SiPytorch,
+  SiTensorflow,
+  SiUnity,
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiCanva,
+  SiAdobepremierepro,
+  SiRust,
+} from 'react-icons/si';
 export type Props = {
   project: TranslatedProject;
 };
 
 const { project } = Astro.props;
+const techIconComponents: Record<string, IconType> = {
+  nextjs: SiNextdotjs,
+  react: SiReact,
+  angular: SiAngular,
+  typescript: SiTypescript,
+  astro: SiAstro,
+  tailwindcss: SiTailwindcss,
+  html5: SiHtml5,
+  css3: SiCss3,
+  javascript: SiJavascript,
+  nodejs: SiNodedotjs,
+  bun: SiBun,
+  deno: SiDeno,
+  express: SiExpress,
+  nestjs: SiNestjs,
+  hono: SiHono,
+  python: SiPython,
+  postgresql: SiPostgresql,
+  mysql: SiMysql,
+  mongodb: SiMongodb,
+  sqlite: SiSqlite,
+  prisma: SiPrisma,
+  drizzleorm: SiDrizzle,
+  figma: SiFigma,
+  docker: SiDocker,
+  kubernetes: SiKubernetes,
+  git: SiGit,
+  amazonservices: SiAmazon,
+  supabase: SiSupabase,
+  redis: SiRedis,
+  flask: SiFlask,
+  fastapi: SiFastapi,
+  postman: SiPostman,
+  pytorch: SiPytorch,
+  tensorflow: SiTensorflow,
+  unity: SiUnity,
+  illustrator: SiAdobeillustrator,
+  photoshop: SiAdobephotoshop,
+  canva: SiCanva,
+  premierepro: SiAdobepremierepro,
+  rust: SiRust,
+};
+
+const linkIconMap = {
+  github: Github,
+  documentation: ScrollText,
+  paper: FileCode,
+};
+
 ---
+
+
 
 <div class="py-12 md:py-16">
   <article class="lg:prose-xl max-w-none dark:prose-invert">
@@ -92,23 +186,50 @@ const { project } = Astro.props;
     }
 
     {
-      (project.challenges || project.learnings) && (
+      (project.technologiesUsed || project.links) && (
         <div class="grid grid-cols-1 md:gap-8 md:grid-cols-2 md:mb-8 mb-4">
-          {project.challenges && (
+          {project.technologiesUsed && (
             <section>
               <h2 class="mt-0">
                 {'Technologies Used'}
               </h2>
-              <p>{project.technologiesUsed?.map((technology) => technology.name).join(', ')}</p>
+              <div class="flex flex-wrap gap-4">  
+              {project.technologiesUsed?.map((tech) => {
+            const TechIcon = techIconComponents[tech.id.toLowerCase()];
+            return TechIcon ? (
+              <TechIcon
+                className="size-8 text-muted-foreground hover:text-primary transition-colors"
+                title={tech.name}
+              />
+            ) : null;
+          })}
+          </div>
             </section>
           )}
 
-          {project.learnings && (
+          {project.links && (
             <section>
               <h2 class="mt-0">
-                {'learningsTitle'}
+                {'Links'}
               </h2>
-              <p>{project.learnings ?? 'Learnings'}</p>
+              <div class="flex flex-wrap gap-4">
+                {project.links?.map((link) => {
+                  const Icon = linkIconMap[link.id.toLowerCase() as keyof typeof linkIconMap] || LinkIcon;
+                  return (
+                    
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <Icon className="size-5" />
+                        {link.label}
+                      </a>
+                    
+                  );
+                })}
+              </div>
             </section>
           )}
         </div>
