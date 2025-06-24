@@ -1,5 +1,6 @@
 // Import i18n utilities
 import placeholderImage from '@/assets/placeholder.webp';
+import livelyImage from '@/assets/lively.png';
 import { ui } from '@/i18n/ui';
 import type {
   ProjectData,
@@ -10,14 +11,15 @@ import type {
 
 const projectsListUnsorted: Array<ProjectData> = [
   {
-    id: 'sampleProject', // Unique identifier for translations
-    slug: 'sample-project', // Used in the URL
-    imageUrl: placeholderImage, // Use imported ImageMetadata
+    id: 'Lively', // Unique identifier for translations
+    slug: 'lively', // Used in the URL
+    imageUrl: livelyImage, // Use imported ImageMetadata
+    imageAltText: 'Lively Image',
     // projectUrl: '#', // Optional: Link to the live project
     // codeUrl: '#', // Optional: Link to the source code
-    tags: ['Astro', 'TypeScript', 'Template'], // Generic tags
-    category: 'Web Application', // Generic category
-    date: '2025-01-01', // Generic date
+    tags: ['Rust', 'Research', 'ACM Best System Paper Award'], // Generic tags
+    category: 'Robot Simulation API', // Generic category
+    date: '2022/08/01', // Generic date
     galleryImages: [
       // Optional: Gallery images for the project
       // {
@@ -36,6 +38,7 @@ const projectsListUnsorted: Array<ProjectData> = [
       { id: 'typescript', name: 'TypeScript' },
       { id: 'tailwindcss', name: 'TailwindCSS' },
     ],
+    description: 'Lively is a highly configurable API layer for commanding robots in mixed modalities using Rust.',
   },
 ];
 
@@ -69,8 +72,8 @@ function translateProject(
     return {
       ...project,
       title: project.id, // Fallback title
-      description: 'Description missing for this project.', // Fallback description
-      imageAltText: 'Placeholder image', // Fallback alt text
+      description: project.description,
+      imageAltText: project.imageAltText ?? 'Placeholder image',
       categoryText: project.category,
       dateText: project.date,
       detailedDescription: 'Detailed description missing.',

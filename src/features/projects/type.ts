@@ -20,6 +20,7 @@ export type ProjectData = {
   id: string; // Keep as is, used for main i18n key and internal reference
   slug: string; // New: for URL generation, e.g., 'my-awesome-project'
   imageUrl?: ImageMetadata; // Main project image, keep as is
+  imageAltText?: string; // Alt text for the main project image, keep as is
   projectUrl?: string; // Link to live project, keep as is
   codeUrl?: string; // Link to source code, keep as is
   tags: Array<string>; // Existing tags, can be used for quick filtering or display
@@ -36,6 +37,8 @@ export type ProjectData = {
 
   // technologiesUsed can be more detailed than simple tags
   technologiesUsed?: Array<TechnologyDetail>; // More structured than tags
+
+  description: string; // Short description for cards/previews
 };
 
 // Define the type for a project once its content is translated
