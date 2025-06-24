@@ -39,6 +39,7 @@ export type ProjectData = {
   technologiesUsed?: Array<TechnologyDetail>; // More structured than tags
 
   description: string; // Short description for cards/previews
+  videoUrl?: string; // Video URL for the project
 };
 
 // Define the type for a project once its content is translated

@@ -1,5 +1,6 @@
 // Import i18n utilities
 import placeholderImage from '@/assets/placeholder.webp';
+import livelyVideo from '@/assets/lively.mp4';
 import livelyImage from '@/assets/lively.png';
 import { ui } from '@/i18n/ui';
 import type {
@@ -14,6 +15,7 @@ const projectsListUnsorted: Array<ProjectData> = [
     id: 'Lively', // Unique identifier for translations
     slug: 'lively', // Used in the URL
     imageUrl: livelyImage, // Use imported ImageMetadata
+    videoUrl: livelyVideo,
     imageAltText: 'Lively Image',
     // projectUrl: '#', // Optional: Link to the live project
     // codeUrl: '#', // Optional: Link to the source code
