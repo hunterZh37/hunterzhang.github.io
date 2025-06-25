@@ -24,16 +24,17 @@ const projectsListUnsorted: Array<ProjectData> = [
     imageUrl: drClippyImage,
     videoUrl: "https://www.youtube.com/watch?v=Q6qbUFsxitI&t=39s",
     imageAltText: 'Dr. Clippy Image',
-    tags: ['Apple Vision Pro', 'Spatial Computing', 'Artificial Intelligence'], // Generic tags
+    tags: ['Apple Vision Pro', 'Spatial Computing', 'Artificial Intelligence', 'Unity', 'C#', 'Python', 'JavaScript'], // Generic tags
     category: 'Apple Vision Pro Spatial AI Research Assistant', // Generic category
     date: '2022/03', // Generic date
     shortDescription: 'Dr. Clippy is an spatial AI research assistant designed to enhance your desktop research workflow through the integration of AI, spatial computing, and networking technology.',
     description: 'Dr. Clippy is an spatial AI research assistant designed to enhance your desktop research workflow through the integration of AI, spatial computing, and networking technology.',
     contributions: [
-      'Developed a mixed reality tool that allows cobot engineers to simulate and interact with virtual cobots in shared workspaces, enabling early-stage design exploration without physical setups.',
-      'Implemented a real-time collision avoidance protocol in AR, significantly improving robot operational safety and efficiency.',
-      'Created a user-friendly interface for intuitive interaction with virtual cobots, enhancing the design process for collaborative robot solutions.',
-      'This research paper and source code is currently archived in University of Wisconsin-Madison, frequently referenced by other Ph.D. researchers.',
+      "Co-led system design and architecture of Dr. Clippy, a personalized AI research assistant integrating voice, text, and spatial interaction for Apple Vision Pro.",
+      "Built the 3D knowledge graph visualization in Unity using PolySpatial and visionOS, enabling users to interact with and expand their research graph in immersive space.",
+      "Implemented cosine similarity-based knowledge graph generation from uploaded papers, enabling personalized academic paper recommendations.",
+      "Designed interactive animated agent interface with JavaScript and HTML to support multi-agent flavors of the Clippy avatar for research assistance.",
+      "Led integration of speech recognition, language models, vector search (Chroma), and spatial UI to create a seamless, cross-modal user experience."
     ],
     technologiesUsed: [
       {
@@ -48,6 +49,15 @@ const projectsListUnsorted: Array<ProjectData> = [
         id: 'unity',
         name: 'Unity'
       },
+      {
+        id: 'python',
+        name: 'Python'
+      },
+      {
+        id: 'flask',
+        name: 'Flask'
+      },
+      
     ],
     links: [
       {
@@ -80,7 +90,7 @@ const projectsListUnsorted: Array<ProjectData> = [
       'Created a user-friendly interface for intuitive interaction with virtual cobots, enhancing the design process for collaborative robot solutions.',
       'This research paper and source code is currently archived in University of Wisconsin-Madison, frequently referenced by other Ph.D. researchers.',
     ],
-    technologiesUsed: [ 
+    technologiesUsed: [
       {
         id: 'javascript',
         name: 'JavaScript'
@@ -88,7 +98,7 @@ const projectsListUnsorted: Array<ProjectData> = [
       {
         id: 'react',
         name: 'React'
-      },   
+      },
     ],
     links: [
       {
@@ -121,7 +131,7 @@ const projectsListUnsorted: Array<ProjectData> = [
       //   id: 'sampleGalleryImage1',
       //   src: placeholderImage, // Placeholder, needs ImageMetadata
       // },
-    ],  
+    ],
     shortDescription: 'CoFrame is a system for training novice cobot programmers with a user-friendly GUI and real-time 3D simulation',
     description: 'Collaborative robots (cobots) offer great potential, but many are not used to their full capabilities, often due to limited training and unclear guidance. To address this gap, we studied how experts design and program cobots, then created CoFrame, world\'s first system that teaches beginners to think and work like experts. Case studies show that this approach helps novices better understand and solve complex cobot tasks.',
     contributions: [
@@ -137,11 +147,11 @@ const projectsListUnsorted: Array<ProjectData> = [
       {
         id: 'react',
         name: 'React'
-      },   
+      },
     ],
     links: [
       {
-        id: 'web app',  
+        id: 'web app',
         url: 'https://coframe.wisc.edu/',
         label: 'Official Website',
       },
