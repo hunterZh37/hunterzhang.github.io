@@ -12,6 +12,15 @@ import type {
 
 const projectsListUnsorted: Array<ProjectData> = [
   {
+    id: 'TBG', // Unique identifier for translations
+    slug: 'tbg', // Used in the URL
+    imageUrl: tbgImage, // Use imported ImageMetadata
+    videoUrl: tbgVideo,
+    imageAltText: 'TBG Image',
+    // projectUrl: '#', // Optional: Link to the live project
+    // codeUrl: '#', // Optional: Link to the source code
+  },
+  {
     id: 'Lively', // Unique identifier for translations
     slug: 'lively', // Used in the URL
     imageUrl: livelyImage, // Use imported ImageMetadata
@@ -20,7 +29,7 @@ const projectsListUnsorted: Array<ProjectData> = [
     // projectUrl: '#', // Optional: Link to the live project
     // codeUrl: '#', // Optional: Link to the source code
     tags: ['Rust', 'Research', 'ACM Best System Paper Award'], // Generic tags
-    category: 'Robot Simulation API', // Generic category
+    category: 'Robot Animation Simulation Library', // Generic category
     date: '2022/08/01', // Generic date
     galleryImages: [
       // Optional: Gallery images for the project
