@@ -1,6 +1,7 @@
-    import React, { useState } from 'react';
+import React, { useState } from 'react';
+import type { Experience } from '../type';
 
-    export default function ExperienceInteractive({ experiences }) {
+    export default function ExperienceInteractive({ experiences }: { experiences: Experience[] }) {
     const [selected, setSelected] = useState(0);
 
     return (
@@ -29,18 +30,18 @@
             <div className="text-sm text-muted-foreground mb-4">{experiences[selected].location}</div>
             <div className="mb-4">{experiences[selected].description}</div>
             <div>
-            <h4 className="font-semibold mb-1">Key Achievements:</h4>
+            <h4 className="font-semibold mb-1">Responsibilities:</h4>
             <ul className="list-disc list-inside text-sm mb-4">
-                {experiences[selected].achievements.map((ach, i) => (
-                <li key={i}>{ach}</li>
+                {experiences[selected].responsibilities.map((responsibility, index) => (
+                <li key={index}>{responsibility}</li>
                 ))}
             </ul>
             </div>
             <div>
             <h4 className="font-semibold mb-1">Skills:</h4>
             <div className="flex flex-wrap gap-2">
-                {experiences[selected].skills.map((skill, i) => (
-                <span key={i} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs">{skill}</span>
+                {experiences[selected].skills.map((skill, index) => (
+                <span key={index} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs">{skill}</span>
                 ))}
             </div>
             </div>

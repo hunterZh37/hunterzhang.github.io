@@ -106,14 +106,14 @@ export default function ExperienceList({ experiences }: ExperienceListProps) {
             <p className="text-foreground leading-relaxed">{selectedExperience.description}</p>
           </div>
           
-          {selectedExperience.achievements.length > 0 && (
+          {selectedExperience.responsibilities.length > 0 && (
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-3">Tasks & Responsibilities</h3>
               <ul className="space-y-2">
-                {selectedExperience.achievements.map((achievement, index) => (
+                {selectedExperience.responsibilities.map((responsibility, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-foreground">{achievement}</span>
+                    <span className="text-foreground">{responsibility}</span>
                   </li>
                 ))}
               </ul>

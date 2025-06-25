@@ -7,10 +7,10 @@ export interface Experience {
   endDate?: string;
   current: boolean;
   description: string;
-  achievements: string[];
   skills: string[];
   logo?: string;
   url?: string;
+  responsibilities: string[];
 }
 
 export interface Skill {

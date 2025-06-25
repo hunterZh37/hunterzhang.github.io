@@ -3,20 +3,21 @@ import type { Experience, Skill, SkillCategory } from './type';
 export const experiences: Experience[] = [
   {
     id: '1',
-    title: 'Senior Specialist',
-    company: 'Virtusa Software Services Private Limited',
-    location: 'Bengaluru, Hyderabad - Hybrid',
-    startDate: '2022-03',
-    current: true,
-    description: 'Responsible for increasing the market penetration of BI products and achieve the sales targets for specific area. Also build relationships and grow BI brand by engaging the opinion leaders in the specified area.',
-    achievements: [
-      'Meet or exceed sales goals through consultative selling and providing a high level of customer service in hospitals and with Health Care Professionals (HCPs). Utilize sales direction and establish effective customer relationships.',
-      'Increase market share, grow business, and achieve a high level of call frequency on targeted hospitals and practitioners to advance the sales cycle.',
-      'Implement developing strategies for implementing and demonstrating and providing training as needed.'
+    title: 'Full-Stack Unity C# Developer (Augmented Reality)',
+    company: 'MadAbility Lab',
+    location: 'Wisconsin, USA',
+    startDate: '2022-06',
+    endDate: '2023-05',
+    current: false,
+    description: 'I was the technical lead for the AR developer team. I was responsible for the development of the AR developer platform and the integration of the AR developer platform with the rest of the system.',
+    responsibilities: [
+      'Led the technical development of a landmark-based HoloLens indoor navigation system for people with low vision.',
+      'Implemented a real-time spatial landmark recognition backbone with holographic scene understanding in Unity.',
+      'Provide technical solutions to the work of Ph.D students and researchers'
     ],
-    skills: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'],
-    logo: '/company-logos/virtusa.png',
-    url: 'https://virtusa.com',
+    skills: ['Unity', 'C#', 'HCI Research'],
+    logo: 'https://madability.cs.wisc.edu/wp-content/uploads/sites/2288/2024/10/Artboard-1-e1728414506737-768x256.png',
+    url: 'https://madability.cs.wisc.edu/',
   },
   {
     id: '2',
@@ -27,7 +28,7 @@ export const experiences: Experience[] = [
     endDate: '2022-02',
     current: false,
     description: 'Led development of scalable ride-sharing platform features and optimized backend systems for high-traffic scenarios.',
-    achievements: [
+    responsibilities: [
       'Developed 3 major features that increased user engagement by 25%',
       'Implemented CI/CD pipeline reducing deployment time by 60%',
       'Collaborated with design team to improve user experience',
@@ -46,7 +47,7 @@ export const experiences: Experience[] = [
     endDate: '2021-05',
     current: false,
     description: 'Provided technical support for Microsoft products and services, handling complex customer issues and escalations.',
-    achievements: [
+    responsibilities: [
       'Maintained 95% customer satisfaction rating',
       'Resolved 150+ customer issues per week',
       'Trained new team members on product knowledge',
@@ -65,7 +66,7 @@ export const experiences: Experience[] = [
     endDate: '2019-12',
     current: false,
     description: 'Worked on business process optimization and data analysis for various client projects.',
-    achievements: [
+    responsibilities: [
       'Improved process efficiency by 30%',
       'Created automated reporting dashboards',
       'Managed client relationships and project deliverables'

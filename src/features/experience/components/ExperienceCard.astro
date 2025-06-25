@@ -29,12 +29,12 @@ const { experience } = Astro.props;
   
   <p class="text-foreground mb-4">{experience.description}</p>
   
-  {experience.achievements.length > 0 && (
+  {experience.responsibilities.length > 0 && (
     <div class="mb-4">
-      <h4 class="font-medium text-foreground mb-2">Key Achievements:</h4>
+      <h4 class="font-medium text-foreground mb-2">Responsibilities:</h4>
       <ul class="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-        {experience.achievements.map((achievement) => (
-          <li>{achievement}</li>
+        {experience.responsibilities.map((responsibility) => (
+          <li>{responsibility}</li>
         ))}
       </ul>
     </div>
