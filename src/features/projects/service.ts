@@ -7,6 +7,7 @@ import tbgProductVideo from '@/assets/tbgProductWalkthroughVideo.mp4';
 import coframeImage from '@/assets/coframe.png';
 import robotControlARImage from '@/assets/robotControlAR.png';
 import robotControlARVideo from '@/assets/robotControlAR.mp4';
+import drClippyImage from '@/assets/Dr.Clippy.png';
 // import tbgVideo from '@/assets/tbg.mp4';
 import { ui } from '@/i18n/ui';
 import type {
@@ -19,21 +20,48 @@ import type {
 const projectsListUnsorted: Array<ProjectData> = [
   {
     id: 'Dr. Clippy',
-    slug: 'kinelastic',
-    imageUrl: robotControlARImage,
-    //videoUrl: robotControlARVideo,
-    imageAltText: 'KinElastic Image',
-    tags: ['Mixed Reality', 'Unity', 'HoloLens', 'C#', 'Archived in University of Wisconsin-Madison'], // Generic tags
-    category: 'AR simulation system for controlling robot in HoloLens', // Generic category
+    slug: 'drclippy',
+    imageUrl: drClippyImage,
+    videoUrl: "https://www.youtube.com/watch?v=Q6qbUFsxitI&t=39s",
+    imageAltText: 'Dr. Clippy Image',
+    tags: ['Apple Vision Pro', 'Spatial Computing', 'Artificial Intelligence'], // Generic tags
+    category: 'Apple Vision Pro Spatial AI Research Assistant', // Generic category
     date: '2022/03', // Generic date
-    shortDescription: 'RobotControlAR or KinElastic is an AR system for supporting robot engineers in brainstorming human-centered collaborative solutions',
-    description: 'RobotControlAR or KinElastic is an AR tool that helps cobot engineers design more human-centered and collaborative robot behaviors. By simulating a virtual cobot’s motion and interaction in shared workspaces, it allows engineers to explore ideas early in the design process without expensive physical setups.',
+    shortDescription: 'Dr. Clippy is an spatial AI research assistant designed to enhance your desktop research workflow through the integration of AI, spatial computing, and networking technology.',
+    description: 'Dr. Clippy is an spatial AI research assistant designed to enhance your desktop research workflow through the integration of AI, spatial computing, and networking technology.',
     contributions: [
       'Developed a mixed reality tool that allows cobot engineers to simulate and interact with virtual cobots in shared workspaces, enabling early-stage design exploration without physical setups.',
       'Implemented a real-time collision avoidance protocol in AR, significantly improving robot operational safety and efficiency.',
       'Created a user-friendly interface for intuitive interaction with virtual cobots, enhancing the design process for collaborative robot solutions.',
       'This research paper and source code is currently archived in University of Wisconsin-Madison, frequently referenced by other Ph.D. researchers.',
     ],
+    technologiesUsed: [
+      {
+        id: 'javascript',
+        name: 'JavaScript'
+      },
+      {
+        id: 'react',
+        name: 'React'
+      },
+      {
+        id: 'unity',
+        name: 'Unity'
+      },
+    ],
+    links: [
+      {
+        id: 'github',
+        url: 'https://github.com/tchemaly/DrClippy/tree/main',
+        label: 'GitHub',
+      },
+      {
+        id: 'devPost',
+        url: 'hhttps://devpost.com/software/dr-clippy#updates',
+        label: 'DevPost',
+      }
+    ],
+
   },
   {
     id: 'RobotControlAR(KinElastic)',

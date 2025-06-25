@@ -103,6 +103,11 @@ const linkIconMap = {
   paper: FileCode,
 };
 
+function getYouTubeEmbedUrl(url: string) {
+  const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/)?.[1];
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+}
+
 ---
 
 
@@ -146,16 +151,26 @@ const linkIconMap = {
     <!-- Video -->
     {
       project.videoUrl && (
-        <div class="mb-0 overflow-hidden rounded-lg">
-          <video
-            src={project.videoUrl}
-            controls
-            class="h-[70%] w-[70%] object-cover"
-            poster={project.imageUrl?.src ?? ''}
-            autoplay
-          >
-            Your browser does not support the video tag.
-          </video>
+        <div class="mb-8 aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+          {project.videoUrl.includes('youtube') || project.videoUrl.includes('youtu.be') ? (
+            <iframe
+              src={getYouTubeEmbedUrl(project.videoUrl)}
+              title="YouTube video"
+              class="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          ) : (
+            <video
+              src={project.videoUrl}
+              controls
+              class="h-full w-full object-cover"
+              poster={project.imageUrl?.src ?? ''}
+              autoplay
+            >
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
       )
     }
