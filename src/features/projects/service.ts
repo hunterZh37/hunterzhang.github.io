@@ -4,6 +4,7 @@ import livelyVideo from '@/assets/lively.mp4';
 import livelyImage from '@/assets/lively.png';
 import tbgImage from '@/assets/tbg.png';
 import tbgProductVideo from '@/assets/tbgProductWalkthroughVideo.mp4';
+import coframeImage from '@/assets/coframe.png';
 // import tbgVideo from '@/assets/tbg.mp4';
 import { ui } from '@/i18n/ui';
 import type {
@@ -15,6 +16,59 @@ import type {
 
 const projectsListUnsorted: Array<ProjectData> = [
   {
+    id: 'CoFrame', // Unique identifier for translations
+    slug: 'coframe', // Used in the URL
+    imageUrl: coframeImage, // Use imported ImageMetadata
+    //videoUrl: coframeVideo,
+    imageAltText: 'CoFrame Image',
+    // projectUrl: '#', // Optional: Link to the live project
+    // codeUrl: '#', // Optional: Link to the source code
+    tags: ['JavaScript', 'React', 'Research', '2022 ACM/IEEE Human-Robot Interaction'], // Generic tags
+    category: 'Cobot Programmers Training System', // Generic category
+    date: '2022/03', // Generic date
+    galleryImages: [
+      // Optional: Gallery images for the project
+      // {
+      //   id: 'sampleGalleryImage1',
+      //   src: placeholderImage, // Placeholder, needs ImageMetadata
+      // },
+    ],  
+    shortDescription: 'CoFrame is a system for training novice cobot programmers with a user-friendly GUI and real-time 3D simulation',
+    description: 'Collaborative robots (cobots) offer great potential, but many are not used to their full capabilities, often due to limited training and unclear guidance. To address this gap, we studied how experts design and program cobots, then created CoFrame, world\'s first system that teaches beginners to think and work like experts. Case studies show that this approach helps novices better understand and solve complex cobot tasks.',
+    contributions: [
+      'Contributed to a cutting-edge educational tool for cobot programming, integrating a user-friendly GUI with real-time 3D simulation, enhancing learning for programmers.',
+      'Improved project usability by developing a comprehensive search function, facilitating user navigation through program features and workspace elements.',
+      'Improved system\'s interactivity by creating dynamic visual elements for the 3D simulation, enabling detailed interaction with robots including custom inputs and output analysis.',
+    ],
+    technologiesUsed: [
+      {
+        id: 'javascript',
+        name: 'JavaScript'
+      },
+      {
+        id: 'react',
+        name: 'React'
+      },   
+    ],
+    links: [
+      {
+        id: 'web app',  
+        url: 'https://coframe.wisc.edu/',
+        label: 'Official Website',
+      },
+      {
+        id: 'github',
+        url: 'https://github.com/Wisc-HCI/coframe',
+        label: 'GitHub',
+      },
+      {
+        id: 'paper',
+        url: 'https://dl.acm.org/doi/10.1145/3568162.3576982',
+        label: 'Paper',
+      },
+    ],
+  },
+  {
     id: 'TBG', // Unique identifier for translations
     slug: 'tbg', // Used in the URL
     imageUrl: tbgImage, // Use imported ImageMetadata
@@ -22,7 +76,7 @@ const projectsListUnsorted: Array<ProjectData> = [
     imageAltText: 'TBG Image',
     projectUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Optional: Link to the live project
     codeUrl: 'https://github.com/Wisc-HCI/tbg', // Optional: Link to the source code
-    tags: ['Python', 'NextJS', 'React', '$375K pre-seed funding raised'], // Generic tags
+    tags: ['Python', 'NextJS', 'React', 'PostgreSQL', 'FastAPI', '$375K pre-seed funding raised'], // Generic tags
     category: 'Sports Entertainment and Prediction Platform', // Generic category
     date: '06/2024 - 06/2025', // Generic date
     galleryImages: [
@@ -34,23 +88,18 @@ const projectsListUnsorted: Array<ProjectData> = [
     ],
     links: [
       {
-        id: 'github',
-        url: 'https://github.com/Wisc-HCI/tbg',
-        label: 'GitHub',
-      },
-      {
         id: 'product',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        label: 'Product Demo',
+        url: 'https://www.thebeautifulgame.live/',
+        label: 'Official Product Website',
       },
       {
         id: 'tutorial',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        url: 'https://app.arcade.software/share/4bEDSsWXeiD8QL5vmzKO',
         label: 'Product Tutorial',
       },
       {
         id: 'marketing',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        url: 'https://drive.google.com/file/d/1mV4T0Qtes6dSLOFZm3O8B5JF47Yo7Afm/view?usp=sharing',
         label: 'Product Marketing Video',
       },
     ],
@@ -79,7 +128,7 @@ const projectsListUnsorted: Array<ProjectData> = [
     imageAltText: 'Lively Image',
     // projectUrl: '#', // Optional: Link to the live project
     // codeUrl: '#', // Optional: Link to the source code
-    tags: ['Rust', 'Research', 'ACM Best System Paper Award'], // Generic tags
+    tags: ['Rust', 'JavaScript', 'Python', 'Research', 'ACM Best System Paper Award'], // Generic tags
     category: 'Robot Animation Simulation Library', // Generic category
     date: '2022/08/01', // Generic date
     galleryImages: [
