@@ -5,6 +5,8 @@ import livelyImage from '@/assets/lively.png';
 import tbgImage from '@/assets/tbg.png';
 import tbgProductVideo from '@/assets/tbgProductWalkthroughVideo.mp4';
 import coframeImage from '@/assets/coframe.png';
+import robotControlARImage from '@/assets/robotControlAR.png';
+import robotControlARVideo from '@/assets/robotControlAR.mp4';
 // import tbgVideo from '@/assets/tbg.mp4';
 import { ui } from '@/i18n/ui';
 import type {
@@ -16,6 +18,65 @@ import type {
 
 const projectsListUnsorted: Array<ProjectData> = [
   {
+    id: 'Dr. Clippy',
+    slug: 'kinelastic',
+    imageUrl: robotControlARImage,
+    //videoUrl: robotControlARVideo,
+    imageAltText: 'KinElastic Image',
+    tags: ['Mixed Reality', 'Unity', 'HoloLens', 'C#', 'Archived in University of Wisconsin-Madison'], // Generic tags
+    category: 'AR simulation system for controlling robot in HoloLens', // Generic category
+    date: '2022/03', // Generic date
+    shortDescription: 'RobotControlAR or KinElastic is an AR system for supporting robot engineers in brainstorming human-centered collaborative solutions',
+    description: 'RobotControlAR or KinElastic is an AR tool that helps cobot engineers design more human-centered and collaborative robot behaviors. By simulating a virtual cobot’s motion and interaction in shared workspaces, it allows engineers to explore ideas early in the design process without expensive physical setups.',
+    contributions: [
+      'Developed a mixed reality tool that allows cobot engineers to simulate and interact with virtual cobots in shared workspaces, enabling early-stage design exploration without physical setups.',
+      'Implemented a real-time collision avoidance protocol in AR, significantly improving robot operational safety and efficiency.',
+      'Created a user-friendly interface for intuitive interaction with virtual cobots, enhancing the design process for collaborative robot solutions.',
+      'This research paper and source code is currently archived in University of Wisconsin-Madison, frequently referenced by other Ph.D. researchers.',
+    ],
+  },
+  {
+    id: 'RobotControlAR(KinElastic)',
+    slug: 'kinelastic',
+    imageUrl: robotControlARImage,
+    videoUrl: robotControlARVideo,
+    imageAltText: 'KinElastic Image',
+    tags: ['Mixed Reality', 'Unity', 'HoloLens', 'C#', 'Archived in University of Wisconsin-Madison'], // Generic tags
+    category: 'AR simulation system for controlling robot in HoloLens', // Generic category
+    date: '2022/03', // Generic date
+    shortDescription: 'RobotControlAR or KinElastic is an AR system for supporting robot engineers in brainstorming human-centered collaborative solutions',
+    description: 'RobotControlAR or KinElastic is an AR tool that helps cobot engineers design more human-centered and collaborative robot behaviors. By simulating a virtual cobot’s motion and interaction in shared workspaces, it allows engineers to explore ideas early in the design process without expensive physical setups.',
+    contributions: [
+      'Developed a mixed reality tool that allows cobot engineers to simulate and interact with virtual cobots in shared workspaces, enabling early-stage design exploration without physical setups.',
+      'Implemented a real-time collision avoidance protocol in AR, significantly improving robot operational safety and efficiency.',
+      'Created a user-friendly interface for intuitive interaction with virtual cobots, enhancing the design process for collaborative robot solutions.',
+      'This research paper and source code is currently archived in University of Wisconsin-Madison, frequently referenced by other Ph.D. researchers.',
+    ],
+    technologiesUsed: [ 
+      {
+        id: 'javascript',
+        name: 'JavaScript'
+      },
+      {
+        id: 'react',
+        name: 'React'
+      },   
+    ],
+    links: [
+      {
+        id: 'github',
+        url: 'https://github.com/Wisc-HCI/RobotControlAR',
+        label: 'GitHub',
+      },
+      {
+        id: 'paper',
+        url: 'https://drive.google.com/file/d/1Tau8T54Ik3Xf3wky7xcuJgdDJFCq5AHC/view?usp=sharing',
+        label: 'Paper',
+      },
+    ],
+
+  },
+  {
     id: 'CoFrame', // Unique identifier for translations
     slug: 'coframe', // Used in the URL
     imageUrl: coframeImage, // Use imported ImageMetadata
@@ -23,7 +84,7 @@ const projectsListUnsorted: Array<ProjectData> = [
     imageAltText: 'CoFrame Image',
     // projectUrl: '#', // Optional: Link to the live project
     // codeUrl: '#', // Optional: Link to the source code
-    tags: ['JavaScript', 'React', 'Research', '2022 ACM/IEEE Human-Robot Interaction'], // Generic tags
+    tags: ['JavaScript', 'React', 'Research', 'Published in 2022 ACM/IEEE Human-Robot Interaction'], // Generic tags
     category: 'Cobot Programmers Training System', // Generic category
     date: '2022/03', // Generic date
     galleryImages: [
@@ -76,7 +137,7 @@ const projectsListUnsorted: Array<ProjectData> = [
     imageAltText: 'TBG Image',
     projectUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Optional: Link to the live project
     codeUrl: 'https://github.com/Wisc-HCI/tbg', // Optional: Link to the source code
-    tags: ['Python', 'NextJS', 'React', 'PostgreSQL', 'FastAPI', '$375K pre-seed funding raised'], // Generic tags
+    tags: ['Python', 'NextJS', 'React', 'PostgreSQL', 'FastAPI', 'Raised $375K pre-seed investment'], // Generic tags
     category: 'Sports Entertainment and Prediction Platform', // Generic category
     date: '06/2024 - 06/2025', // Generic date
     galleryImages: [
@@ -128,7 +189,7 @@ const projectsListUnsorted: Array<ProjectData> = [
     imageAltText: 'Lively Image',
     // projectUrl: '#', // Optional: Link to the live project
     // codeUrl: '#', // Optional: Link to the source code
-    tags: ['Rust', 'JavaScript', 'Python', 'Research', 'ACM Best System Paper Award'], // Generic tags
+    tags: ['Rust', 'JavaScript', 'Python', 'Research', 'Received ACM Best System Paper Award'], // Generic tags
     category: 'Robot Animation Simulation Library', // Generic category
     date: '2022/08/01', // Generic date
     galleryImages: [
