@@ -146,11 +146,11 @@ const linkIconMap = {
     <!-- Video -->
     {
       project.videoUrl && (
-        <div class="mb-8 aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+        <div class="mb-0 overflow-hidden rounded-lg">
           <video
             src={project.videoUrl}
             controls
-            class="h-full w-full object-cover"
+            class="h-[70%] w-[70%] object-cover"
             poster={project.imageUrl?.src ?? ''}
             autoplay
           >
@@ -238,7 +238,7 @@ const linkIconMap = {
     }
 
     {/* Project and Code URLs */}
-    <div class="mt-8 flex flex-wrap gap-4">
+    <!-- <div class="mt-8 flex flex-wrap gap-4">
       {
         project.projectUrl && (
           <a
@@ -269,6 +269,6 @@ const linkIconMap = {
           </a>
         )
       }
-    </div>
+    </div> -->
   </article>
 </div>

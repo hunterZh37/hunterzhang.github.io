@@ -2,6 +2,9 @@
 import placeholderImage from '@/assets/placeholder.webp';
 import livelyVideo from '@/assets/lively.mp4';
 import livelyImage from '@/assets/lively.png';
+import tbgImage from '@/assets/tbg.png';
+import tbgProductVideo from '@/assets/tbgProductWalkthroughVideo.mp4';
+// import tbgVideo from '@/assets/tbg.mp4';
 import { ui } from '@/i18n/ui';
 import type {
   ProjectData,
@@ -15,10 +18,58 @@ const projectsListUnsorted: Array<ProjectData> = [
     id: 'TBG', // Unique identifier for translations
     slug: 'tbg', // Used in the URL
     imageUrl: tbgImage, // Use imported ImageMetadata
-    videoUrl: tbgVideo,
+    videoUrl: tbgProductVideo,
     imageAltText: 'TBG Image',
-    // projectUrl: '#', // Optional: Link to the live project
-    // codeUrl: '#', // Optional: Link to the source code
+    projectUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Optional: Link to the live project
+    codeUrl: 'https://github.com/Wisc-HCI/tbg', // Optional: Link to the source code
+    tags: ['Python', 'NextJS', 'React', '$375K pre-seed funding raised'], // Generic tags
+    category: 'Sports Entertainment and Prediction Platform', // Generic category
+    date: '06/2024 - 06/2025', // Generic date
+    galleryImages: [
+      // Optional: Gallery images for the project
+      // {
+      //   id: 'sampleGalleryImage1',
+      //   src: placeholderImage, // Placeholder, needs ImageMetadata
+      // },
+    ],
+    links: [
+      {
+        id: 'github',
+        url: 'https://github.com/Wisc-HCI/tbg',
+        label: 'GitHub',
+      },
+      {
+        id: 'product',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        label: 'Product Demo',
+      },
+      {
+        id: 'tutorial',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        label: 'Product Tutorial',
+      },
+      {
+        id: 'marketing',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        label: 'Product Marketing Video',
+      },
+    ],
+    shortDescription: 'TBG is a sports entertainment and prediction platform designed for soccer fans who think like coaches.',
+    description: 'TBG (The Beautiful Game) is a sports entertainment and betting platform designed for soccer fans who think like coaches. It transforms deep tactical insights—like heatmaps, duels, and formations—into real-time, skill-based prediction markets. Unlike traditional sportsbooks, TBG allows users to create any soccer moment they could possibly think of while with a higher payout.',
+    contributions: [
+      'Shaped the vision and strategy adopted by the team, leading to <strong>$375K pre-seed</strong> funding at <strong>$8M valuation</strong>.',
+      'Established the current <strong>product design backbone</strong>, defining the core interaction patterns, and visual language.',
+      'Implemented the current full-stack product infrastructure using <strong>Next.js, Python, PostgreSQL, and FastAPI</strong>.',
+      'Led <strong>user research</strong> and <strong>iterative design cycles</strong> to identify a undeserved market.',
+      'Unified <strong>PostgreSQL</strong> & <strong>PostHog</strong> into an <strong>analytics system</strong> to identify user insights for product decisions.',
+      'Launched the first targeted marketing campaign, onboarded <strong>80 active users</strong> in the <strong>first month</strong>.',
+    ],
+    technologiesUsed: [
+      { id: 'nextjs', name: 'Next.js' },
+      { id: 'python', name: 'Python' },
+      { id: 'postgresql', name: 'PostgreSQL' },
+      { id: 'fastapi', name: 'FastAPI' },
+    ],
   },
   {
     id: 'Lively', // Unique identifier for translations
