@@ -1,0 +1,16 @@
+---
+import ExperienceCard from './ExperienceCard.astro';
+import type { Experience } from '../type';
+
+interface Props {
+  experiences: Experience[];
+}
+
+const { experiences } = Astro.props;
+---
+
+<div class="space-y-8">
+  {experiences.map((experience) => (
+    <ExperienceCard experience={experience} />
+  ))}
+</div> 

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ExperienceScreen } from '@/features/experience';
+
+const pageMeta = {
+  title: 'pageTitle',
+  description: 'pageDescription',
+};
+---
+
+<BaseLayout pageTitle={pageMeta.title} pageDescription={pageMeta.description}>
+  <ExperienceScreen />
+</BaseLayout> 

@@ -1,0 +1,50 @@
+---
+import { Badge } from '@/components/ui/badge';
+import type { Experience } from '../type';
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+<div class="bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow">
+  <div class="flex items-start justify-between mb-4">
+    <div>
+      <h3 class="text-xl font-semibold text-foreground">{experience.title}</h3>
+      <p class="text-lg text-muted-foreground">{experience.company}</p>
+      <p class="text-sm text-muted-foreground">{experience.location}</p>
+    </div>
+    {experience.logo && (
+      <img src={experience.logo} alt={`${experience.company} logo`} class="w-12 h-12 object-contain" />
+    )}
+  </div>
+  
+  <div class="mb-4">
+    <p class="text-sm text-muted-foreground">
+      {new Date(experience.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - 
+      {experience.current ? 'Present' : new Date(experience.endDate!).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+    </p>
+  </div>
+  
+  <p class="text-foreground mb-4">{experience.description}</p>
+  
+  {experience.achievements.length > 0 && (
+    <div class="mb-4">
+      <h4 class="font-medium text-foreground mb-2">Key Achievements:</h4>
+      <ul class="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+        {experience.achievements.map((achievement) => (
+          <li>{achievement}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+  
+  {experience.skills.length > 0 && (
+    <div class="flex flex-wrap gap-2">
+      {experience.skills.map((skill) => (
+        <Badge variant="secondary" className="text-xs">{skill}</Badge>
+      ))}
+    </div>
+  )}
+</div> 
