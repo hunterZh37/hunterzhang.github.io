@@ -3,6 +3,7 @@ import { defaultLanguage, type LanguageCode } from '@/i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { cn } from '@/lib/utils';
 
+
 import type { NavItem } from '@/layouts/BaseLayout.astro';
 
 const currentLocale =
@@ -18,9 +19,10 @@ const { navItems } = Astro.props;
 ---
 
 <nav
-  class="md:hidden fixed bottom-0 left-0 z-50 w-full bg-background p-2 border-t border-border"
+  class="md:hidden fixed bottom-0 left-0 right-0 z-50 w-full bg-background/95 backdrop-blur-sm p-2 border-t border-border shadow-lg"
   role="navigation"
   aria-label="Main navigation"
+  style="position: fixed !important;"
 >
   <div
     class:list={[

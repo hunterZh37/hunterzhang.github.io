@@ -110,29 +110,28 @@ function getYouTubeEmbedUrl(url: string) {
 
 ---
 
-
-
-<div class="py-12 md:py-16">
-  <article class="lg:prose-xl max-w-none dark:prose-invert">
+<div class="py-6 md:py-12 lg:py-16 px-4 md:px-6 lg:px-8">
+  <article>
     <a
       href={`/projects`}
-      class={buttonVariants({ variant: 'ghost' }) + ' mb-6 no-underline'}
+      class={buttonVariants({ variant: 'ghost', size: 'sm' }) + ' mb-4 md:mb-6 no-underline text-xs sm:text-sm'}
     >
       &larr; Back to Projects
     </a>
 
     <Heading
       title={project.title}
+      className="mb-4 md:mb-6"
     />
-    <div
-      class="mb-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-600 dark:text-gray-900"
-    >
+    
+    <!-- Tags and Date -->
+    <div class="mb-4 md:mb-6 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-x-4 sm:gap-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
       <!-- Category -->
       {
         project.tags && (
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 flex-wrap">
             {project.tags.map((tag) => (
-              <Badge variant="default">{tag}</Badge>
+              <Badge variant="default" className="text-xs px-2 py-1">{tag}</Badge>
             ))}
           </div>
         )
@@ -141,7 +140,7 @@ function getYouTubeEmbedUrl(url: string) {
       {
         project.dateText && (
           <div class="flex items-center gap-2">
-            <span class="text-foreground">Date: </span>
+            <span class="text-foreground font-medium">Date:</span>
             <span class="text-foreground">{project.dateText}</span>
           </div>
         )
@@ -151,7 +150,7 @@ function getYouTubeEmbedUrl(url: string) {
     <!-- Video -->
     {
       project.videoUrl && (
-        <div class="mb-8 aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+        <div class="mb-6 md:mb-8 aspect-video overflow-hidden rounded-lg shadow-lg">
           {project.videoUrl.includes('youtube') || project.videoUrl.includes('youtu.be') ? (
             <iframe
               src={getYouTubeEmbedUrl(project.videoUrl)}
@@ -178,22 +177,23 @@ function getYouTubeEmbedUrl(url: string) {
     <!-- Description -->
     {
       project.detailedDescription && (
-        <section class="mb-8">
-          <h2>{'Description'}</h2>
-          <p>{project.description}</p>
+        <section class="mb-6 md:mb-8">
+          <h2 class="text-lg md:text-xl lg:text-2xl">Description</h2>
+          <p class="text-sm md:text-base leading-relaxed">{project.description}</p>
         </section>
       )
     }
 
+    <!-- Contributions -->
     {
       project.contributions &&
         project.contributions.length > 0 && (
-          <section class="mb-8">
-            <h2>{'Contributions'}</h2>
-            <ul class="list-disc">
+          <section class="mb-6 md:mb-8">
+            <h2 class="text-lg md:text-xl lg:text-2xl">Contributions</h2>
+            <ul class="list-disc pl-4 md:pl-6 space-y-2">
               {project.contributions?.map((contribution) => (
-                <li>
-                  <p set:html={contribution} />
+                <li class="text-sm md:text-base leading-relaxed">
+                  <div set:html={contribution} />
                 </li>
               ))}
             </ul>
@@ -201,89 +201,55 @@ function getYouTubeEmbedUrl(url: string) {
         )
     }
 
-    {
-      (project.technologiesUsed || project.links) && (
-        <div class="grid grid-cols-1 md:gap-8 md:grid-cols-2 md:mb-8 mb-4">
-          {project.technologiesUsed && (
-            <section>
-              <h2 class="mt-0">
-                {'Technologies Used'}
-              </h2>
-              <div class="flex flex-wrap gap-4">  
-              {project.technologiesUsed?.map((tech) => {
-            const TechIcon = techIconComponents[tech.id.toLowerCase()];
-            return TechIcon ? (
-              <TechIcon
-                className="size-8 text-muted-foreground hover:text-primary transition-colors"
-                title={tech.name}
-              />
-            ) : null;
-          })}
+    <!-- Technologies and Links -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+      {project.technologiesUsed && (
+        <section>
+          <h2 class="text-lg md:text-xl lg:text-2xl mt-0 mb-3 md:mb-4">
+            Technologies Used
+          </h2>
+          <div class="flex flex-wrap gap-3 md:gap-4">  
+            {project.technologiesUsed?.map((tech) => {
+              const TechIcon = techIconComponents[tech.id.toLowerCase()];
+              return TechIcon ? (
+                <div class="flex flex-col items-center gap-1 group">
+                  <TechIcon
+                    className="size-6 md:size-8 text-muted-foreground hover:text-primary transition-colors"
+                    title={tech.name}
+                  />
+                  <span class="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+                    {tech.name}
+                  </span>
+                </div>
+              ) : null;
+            })}
           </div>
-            </section>
-          )}
+        </section>
+      )}
 
-          {project.links && (
-            <section>
-              <h2 class="mt-0">
-                {'Links'}
-              </h2>
-              <div class="flex flex-wrap gap-4">
-                {project.links?.map((link) => {
-                  const Icon = linkIconMap[link.id.toLowerCase() as keyof typeof linkIconMap] || LinkIcon;
-                  return (
-                    
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="flex items-center gap-2 text-primary hover:underline"
-                      >
-                        <Icon className="size-5" />
-                        {link.label}
-                      </a>
-                    
-                  );
-                })}
-              </div>
-            </section>
-          )}
-        </div>
-      )
-    }
-
-    {/* Project and Code URLs */}
-    <!-- <div class="mt-8 flex flex-wrap gap-4">
-      {
-        project.projectUrl && (
-          <a
-            href={project.projectUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class={
-              buttonVariants({ variant: 'default' }) + ' flex-1 no-underline'
-            }
-          >
-            <ExternalLink className="mr-2 size-4" />
-            {'visitProjectButton'}
-          </a>
-        )
-      }
-      {
-        project.codeUrl && (
-          <a
-            href={project.codeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class={
-              buttonVariants({ variant: 'secondary' }) + ' flex-1 no-underline'
-            }
-          >
-            <Code className="mr-2 size-4" />
-            {'viewCodeButton'}
-          </a>
-        )
-      }
-    </div> -->
+      {project.links && (
+        <section>
+          <h2 class="text-lg md:text-xl lg:text-2xl mt-0 mb-3 md:mb-4">
+            Links
+          </h2>
+          <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 md:gap-4">
+            {project.links?.map((link) => {
+              const Icon = linkIconMap[link.id.toLowerCase() as keyof typeof linkIconMap] || LinkIcon;
+              return (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 text-primary hover:underline text-sm md:text-base py-2 px-3 rounded-lg border border-border hover:bg-muted/50 transition-colors"
+                >
+                  <Icon className="size-4 md:size-5 flex-shrink-0" />
+                  <span class="truncate">{link.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
+    </div>
   </article>
 </div>
